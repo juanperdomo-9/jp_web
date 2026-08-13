@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Juan Perdomo | Desarrollador Web Full Stack</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Juan Perdomo — desarrollador web full stack. Construyo e-commerce, plataformas y landings a medida con Python/Django, de punta a punta.">
+<meta name="theme-color" content="#0a0e17">
+
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0e17'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%2300E5C7' text-anchor='middle'%3EJP%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --bg: #0a0e17;
+        --bg-deep: #060810;
+        --card: #10151f;
+        --violet: #8b5cf6;
+        --cyan: #00e5c7;
+        --pink: #ff5da2;
+        --text-muted: #96a0b8;
+        --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+        margin: 0;
+        font-family: 'Inter', Arial, sans-serif;
+        background: var(--bg);
+        color: white;
+        overflow-x: hidden;
+    }
+
+    h1, h2, h3 { font-family: 'Space Grotesk', 'Inter', sans-serif; }
+    .mono { font-family: 'JetBrains Mono', monospace; }
+    a { font-family: inherit; }
+    img { max-width: 100%; }
+
+    p { color: var(--text-muted); line-height: 1.7; }
+
+    /* ---------- BOTONES ---------- */
+    .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 26px;
+        border-radius: 10px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+        font-size: 15px;
+    }
+
+    .btn-primary {
+        background: linear-gradient(90deg, var(--cyan), var(--violet));
+        color: #05070c;
+        box-shadow: 0 8px 24px rgba(0, 229, 199, 0.25);
+    }
+
+    .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 28px rgba(0, 229, 199, 0.4);
+    }
+
+    .btn-outline {
+        background: transparent;
+        border: 1.5px solid rgba(255, 255, 255, 0.25);
+        color: white;
+    }
+
+    .btn-outline:hover {
+        border-color: var(--cyan);
+        background: rgba(0, 229, 199, 0.08);
+        transform: translateY(-3px);
+    }
+
+    .btn-info {
+        display: inline-block;
+        margin-top: 15px;
+        margin-right: 8px;
+        background: transparent;
+        border: 1px solid var(--violet);
+        color: #c9b6ff;
+        padding: 9px 16px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .btn-info:hover {
+        background: var(--violet);
+        color: white;
+    }
+
+    /* ---------- SCROLL REVEAL ---------- */
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.show { opacity: 1; transform: translateY(0); }
+
+    /* ---------- NAVBAR ---------- */
+    .navbar {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background: rgba(6, 8, 16, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        z-index: 1000;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .nav-container {
+        max-width: 1200px;
+        margin: auto;
+        padding: 14px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav-logo {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+        color: white;
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+    }
+
+    .nav-logo .logo-badge {
+        width: 34px;
+        height: 34px;
+        border-radius: 9px;
+        background: linear-gradient(135deg, var(--cyan), var(--violet));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: 700;
+        color: #05070c;
+        font-size: 14px;
+    }
+
+    .nav-links { display: flex; align-items: center; gap: 30px; }
+
+    .nav-links a {
+        color: #dfe4f5;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+        transition: 0.3s;
+        position: relative;
+    }
+
+    .nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 2px;
+        background: var(--cyan);
+        transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover { color: white; }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-toggle {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 6px;
+    }
+
+    .nav-toggle span {
+        width: 24px;
+        height: 2px;
+        background: white;
+        border-radius: 2px;
+        transition: 0.3s;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+        position: relative;
+        width: 100%;
+        padding: 100px 20px 80px;
+        background:
+            radial-gradient(circle at 15% 20%, rgba(139, 92, 246, 0.22), transparent 45%),
+            radial-gradient(circle at 85% 80%, rgba(0, 229, 199, 0.16), transparent 45%),
+            linear-gradient(180deg, var(--bg) 0%, var(--bg-deep) 100%);
+        overflow: hidden;
+    }
+
+    .hero-inner {
+        position: relative;
+        z-index: 2;
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        flex-wrap: wrap;
+    }
+
+    .hero-content { flex: 1 1 420px; text-align: left; }
+
+    .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(0, 229, 199, 0.1);
+        border: 1px solid rgba(0, 229, 199, 0.35);
+        color: var(--cyan);
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        padding: 6px 14px;
+        border-radius: 999px;
+        margin-bottom: 22px;
+        font-family: 'JetBrains Mono', monospace;
+    }
+
+    .eyebrow .dot {
+        width: 7px; height: 7px; border-radius: 50%;
+        background: var(--cyan);
+        box-shadow: 0 0 10px var(--cyan);
+    }
+
+    .hero-content h1 {
+        font-size: 46px;
+        font-weight: 700;
+        line-height: 1.18;
+        margin: 0 0 18px;
+    }
+
+    .hero-content h1 span {
+        background: linear-gradient(90deg, var(--cyan) 0%, var(--violet) 70%, var(--pink) 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .hero-sub { font-size: 17px; max-width: 540px; margin: 0 0 30px; }
+
+    .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 34px; }
+
+    .hero-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .hero-tags span {
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        color: #d7dcf2;
+        font-size: 13px;
+        padding: 7px 14px;
+        border-radius: 999px;
+        font-family: 'JetBrains Mono', monospace;
+    }
+
+    .hero-card {
+        flex: 1 1 380px;
+        max-width: 440px;
+        background: var(--card);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: var(--radius);
+        padding: 0;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+        position: relative;
+        z-index: 2;
+        overflow: hidden;
+    }
+
+    .hero-card-head {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        padding: 14px 18px;
+        background: #0d1220;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .hero-card-head span {
+        width: 11px; height: 11px; border-radius: 50%;
+    }
+    .dot-red { background: #ff5f56; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #27c93f; }
+
+    .hero-card-body {
+        padding: 24px 22px 28px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 13.5px;
+        line-height: 1.9;
+    }
+
+    .hero-card-body .k { color: #7d8bab; }
+    .hero-card-body .s { color: var(--cyan); }
+    .hero-card-body .v { color: #e6e9f5; }
+    .hero-card-body .c { color: #5f6b87; }
+
+    .hero-blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(10px);
+        z-index: 1;
+        animation: float 9s ease-in-out infinite;
+    }
+
+    .blob-1 {
+        width: 260px; height: 260px;
+        background: radial-gradient(circle, rgba(139, 92, 246, 0.35), transparent 70%);
+        top: -60px; right: 10%;
+    }
+
+    .blob-2 {
+        width: 220px; height: 220px;
+        background: radial-gradient(circle, rgba(0, 229, 199, 0.25), transparent 70%);
+        bottom: -60px; left: 5%;
+        animation-delay: 2s;
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(22px); }
+        100% { transform: translateY(0px); }
+    }
+
+    /* ---------- SOBRE MI ---------- */
+    .sobre { padding: 90px 20px; background: var(--bg); }
+
+    .section-head { text-align: center; max-width: 640px; margin: 0 auto 50px; }
+    .section-head .eyebrow { margin-bottom: 14px; }
+    .section-head h2 { font-size: 34px; margin: 0 0 12px; }
+
+    .sobre-container {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        gap: 60px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .sobre-texto { flex: 1 1 380px; text-align: left; }
+    .sobre-texto h2 { font-size: 30px; margin-bottom: 20px; }
+    .sobre-texto p { margin-bottom: 15px; }
+    .intro { font-size: 18px; color: white; }
+
+    .sobre-boxes { flex: 1 1 340px; display: flex; flex-direction: column; gap: 18px; }
+
+    .box {
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        background: var(--card);
+        padding: 22px;
+        border-radius: 14px;
+        border-left: 4px solid var(--cyan);
+        transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .box:hover {
+        transform: translateX(6px);
+        background: #131a2b;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    .box-icon {
+        flex-shrink: 0;
+        width: 42px; height: 42px;
+        border-radius: 10px;
+        background: rgba(0, 229, 199, 0.12);
+        display: flex; align-items: center; justify-content: center;
+    }
+
+    .box-icon svg { width: 22px; height: 22px; stroke: var(--cyan); }
+    .box h3 { margin: 0 0 5px; font-size: 17px; }
+    .box p { font-size: 14px; color: #a2acc7; margin: 0; }
+
+    /* ---------- PROYECTOS ---------- */
+    .proyectos-bg {
+        position: relative;
+        overflow: hidden;
+        padding: 90px 20px 100px;
+        background: var(--bg-deep);
+    }
+
+    .bg-circle {
+        position: absolute;
+        width: 400px; height: 400px;
+        background: radial-gradient(circle, rgba(139, 92, 246, 0.35), transparent 70%);
+        z-index: 0;
+        animation: float 8s ease-in-out infinite;
+    }
+
+    .circle-1 { top: -120px; left: -120px; }
+    .circle-2 { top: -120px; right: -120px; animation-delay: 1.5s; }
+    .circle-3 { bottom: -120px; left: -120px; animation-delay: 3s; }
+    .circle-4 { bottom: -120px; right: -120px; animation-delay: 4.5s; }
+
+    .cards {
+        position: relative;
+        z-index: 1;
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 26px;
+    }
+
+    .card {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        background: var(--card);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-top: 3px solid var(--violet);
+        padding: 28px 26px;
+        border-radius: var(--radius);
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card.show { opacity: 1; transform: translateY(0); }
+
+    .card:hover {
+        border-color: rgba(139, 92, 246, 0.5);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+        transform: translateY(-6px);
+    }
+
+    .card-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+    }
+
+    .card-icon {
+        width: 46px; height: 46px;
+        border-radius: 12px;
+        background: rgba(139, 92, 246, 0.16);
+        display: flex; align-items: center; justify-content: center;
+    }
+
+    .card-icon svg { width: 23px; height: 23px; stroke: #c9b6ff; }
+
+    .card-tag {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        color: var(--cyan);
+        background: rgba(0, 229, 199, 0.1);
+        border: 1px solid rgba(0, 229, 199, 0.3);
+        padding: 4px 10px;
+        border-radius: 999px;
+    }
+
+    .card h3 { margin: 0 0 10px; font-size: 19px; }
+    .card p { font-size: 14.5px; flex-grow: 1; }
+
+    .card-stack {
+        display: flex; flex-wrap: wrap; gap: 6px;
+        margin-top: 14px;
+    }
+
+    .card-stack span {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 11px;
+        color: #a2acc7;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 4px 9px;
+        border-radius: 6px;
+    }
+
+    .card-actions { margin-top: 14px; }
+
+    /* ---------- SKILLS ---------- */
+    .skills { padding: 90px 20px; background: var(--bg); }
+
+    .skills-grid {
+        max-width: 1000px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 16px;
+    }
+
+    .skill-chip {
+        background: var(--card);
+        border: 1px solid rgba(255, 255, 255, 0.07);
+        border-radius: 12px;
+        padding: 18px 16px;
+        text-align: center;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 14px;
+        color: #e6e9f5;
+        transition: 0.3s;
+    }
+
+    .skill-chip:hover {
+        border-color: var(--cyan);
+        transform: translateY(-4px);
+        background: #131a2b;
+    }
+
+    /* ---------- CTA ---------- */
+    .cta {
+        padding: 80px 20px;
+        text-align: center;
+        background: linear-gradient(135deg, var(--bg) 0%, #16213f 100%);
+    }
+
+    .cta h2 { font-size: 30px; margin: 0 0 14px; }
+    .cta p { max-width: 520px; margin: 0 auto 30px; }
+
+    .cta-links {
+        display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;
+        margin-top: 26px;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+        background: var(--bg-deep);
+        padding: 50px 20px 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .footer-inner {
+        max-width: 1200px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        text-align: left;
+    }
+
+    .footer-brand {
+        display: flex; align-items: center; gap: 10px;
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 17px;
+    }
+
+    .footer-links { display: flex; gap: 24px; flex-wrap: wrap; }
+
+    .footer-links a {
+        color: var(--text-muted);
+        text-decoration: none;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    .footer-links a:hover { color: white; }
+
+    .footer-bottom {
+        max-width: 1200px;
+        margin: 24px auto 0;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        text-align: center;
+        color: #5c6684;
+        font-size: 13px;
+        font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* ---------- WHATSAPP FLOAT ---------- */
+    .whatsapp-float {
+        position: fixed;
+        bottom: 24px; right: 24px;
+        width: 58px; height: 58px;
+        background: #25D366;
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        box-shadow: 0 10px 26px rgba(37, 211, 102, 0.5);
+        z-index: 999;
+        transition: transform 0.25s ease;
+    }
+
+    .whatsapp-float:hover { transform: scale(1.08); }
+    .whatsapp-float svg { width: 28px; height: 28px; fill: white; }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+        .hero-inner { flex-direction: column-reverse; }
+        .hero-content, .hero-card { flex: none; width: 100%; }
+        .hero-content { text-align: center; }
+        .hero-sub { margin-left: auto; margin-right: auto; }
+        .hero-actions { justify-content: center; }
+        .hero-tags { justify-content: center; }
+        .hero-card { margin: 0 auto; }
+        .sobre-container { flex-direction: column; }
+        .sobre-texto { text-align: center; }
+        .sobre-texto p { text-align: left; }
+    }
+
+    @media (max-width: 768px) {
+        .nav-toggle { display: flex; }
+
+        .nav-links {
+            position: absolute;
+            top: 100%; left: 0; right: 0;
+            background: rgba(6, 8, 16, 0.98);
+            backdrop-filter: blur(12px);
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 4px;
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, padding 0.35s ease;
+        }
+
+        .nav-links.open { max-height: 300px; padding: 14px 20px 20px; }
+
+        .nav-links a {
+            width: 100%;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .hero-content h1 { font-size: 30px; }
+        .section-head h2 { font-size: 27px; }
+
+        .footer-inner { flex-direction: column; text-align: center; }
+        .footer-links { justify-content: center; }
+
+        .whatsapp-float { width: 52px; height: 52px; bottom: 18px; right: 18px; }
+    }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <a href="#top" class="nav-logo">
+            <span class="logo-badge">JP</span>
+            Juan Perdomo
+        </a>
+
+        <div class="nav-links" id="navLinks">
+            <a href="#top">Inicio</a>
+            <a href="#sobre">Sobre mí</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#skills">Skills</a>
+            <a href="https://wa.me/5492216826109" target="_blank" rel="noopener">Contactar</a>
+        </div>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+    <div class="hero-blob blob-1"></div>
+    <div class="hero-blob blob-2"></div>
+
+    <div class="hero-inner">
+        <div class="hero-content reveal">
+            <span class="eyebrow"><span class="dot"></span> Disponible para nuevos proyectos</span>
+            <h1>Hola, soy Juan.<br>Construyo <span>webs que venden</span>, no solo que se ven bien</h1>
+            <p class="hero-sub">
+                Desarrollador web full stack especializado en Python/Django. Diseño, desarrollo
+                y pongo online e-commerce, plataformas y landings a medida, de punta a punta.
+            </p>
+            <div class="hero-actions">
+                <a href="https://wa.me/5492216826109?text=Hola%20Juan%2C%20quiero%20hablar%20sobre%20un%20proyecto" class="btn btn-primary" target="_blank" rel="noopener">
+                    Hablemos por WhatsApp
+                </a>
+                <a href="#proyectos" class="btn btn-outline">
+                    Ver proyectos
+                </a>
+            </div>
+            <div class="hero-tags">
+                <span>Python / Django</span>
+                <span>E-commerce</span>
+                <span>Landings</span>
+                <span>Deploy &amp; DevOps</span>
+            </div>
+        </div>
+
+        <div class="hero-card reveal">
+            <div class="hero-card-head">
+                <span class="dot-red"></span><span class="dot-yellow"></span><span class="dot-green"></span>
+            </div>
+            <div class="hero-card-body">
+                <div><span class="c">// perfil.json</span></div>
+                <div><span class="s">"nombre"</span><span class="k">:</span> <span class="v">"Juan Perdomo"</span><span class="k">,</span></div>
+                <div><span class="s">"rol"</span><span class="k">:</span> <span class="v">"Full Stack Developer"</span><span class="k">,</span></div>
+                <div><span class="s">"stack"</span><span class="k">:</span> <span class="v">["Python", "Django", "JS"]</span><span class="k">,</span></div>
+                <div><span class="s">"foco"</span><span class="k">:</span> <span class="v">"e-commerce & landings"</span><span class="k">,</span></div>
+                <div><span class="s">"ubicación"</span><span class="k">:</span> <span class="v">"Argentina"</span><span class="k">,</span></div>
+                <div><span class="s">"disponibilidad"</span><span class="k">:</span> <span class="v">true</span></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- SOBRE MI -->
+<section class="sobre" id="sobre">
+    <div class="sobre-container">
+
+        <div class="sobre-texto reveal">
+            <h2>Sobre mí</h2>
+
+            <p class="intro">
+                Soy <strong>Juan Perdomo</strong>, desarrollador web full stack. Me formé en programación
+                con foco en Python y Django, y desde entonces vengo construyendo proyectos reales para
+                distintos rubros.
+            </p>
+
+            <p>
+                Trabajo de punta a punta: relevo lo que necesita el proyecto, diseño la base de datos y
+                el backend, armo el frontend y dejo todo funcionando en producción. Nada de plantillas
+                genéricas: cada sitio se arma a medida del negocio.
+            </p>
+
+            <p>
+                Me interesa especialmente el e-commerce y las plataformas con lógica propia (carritos,
+                pagos, catálogos, paneles de administración), sin dejar de lado landings y sitios
+                institucionales bien pensados para convertir visitas en clientes.
+            </p>
+
+            <p>
+                Además de este proyecto (mi propio landing), armé la landing de
+                <a href="https://wa.me/5492216826109" target="_blank" rel="noopener" style="color: var(--cyan); text-decoration: none;">Impulsa Studio</a>,
+                una agencia de marketing digital, y varios e-commerce y plataformas que podés ver abajo.
+            </p>
+        </div>
+
+        <div class="sobre-boxes reveal">
+            <div class="box">
+                <div class="box-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                </div>
+                <div>
+                    <h3>Backend sólido</h3>
+                    <p>Django, bases de datos, autenticación, pagos e integraciones armadas para durar.</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </div>
+                <div>
+                    <h3>Diseño que convierte</h3>
+                    <p>Interfaces claras, rápidas y pensadas para que el visitante se convierta en cliente.</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="box-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V10M12 19V5M20 19v-7"/></svg>
+                </div>
+                <div>
+                    <h3>Entrega end-to-end</h3>
+                    <p>Desde la idea hasta el sitio online, en producción y funcionando.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- PROYECTOS -->
+<section id="proyectos" class="proyectos-bg">
+    <div class="bg-circle circle-1"></div>
+    <div class="bg-circle circle-2"></div>
+    <div class="bg-circle circle-3"></div>
+    <div class="bg-circle circle-4"></div>
+
+    <div class="section-head reveal">
+        <span class="eyebrow"><span class="dot"></span> Trabajo realizado</span>
+        <h2>Proyectos</h2>
+        <p>Algunos de los sitios y plataformas que desarrollé, de principio a fin.</p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="card-top">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                </div>
+                <span class="card-tag">E-commerce</span>
+            </div>
+            <h3>REGALBOXX</h3>
+            <p>
+                Tienda de cajas de regalo a medida: catálogo de giftboxes, categorías, carrito y checkout
+                propio, con panel de administración para gestionar productos y pedidos.
+            </p>
+            <div class="card-stack">
+                <span>Django</span><span>PostgreSQL</span><span>Checkout</span><span>Panel admin</span>
+            </div>
+            <div class="card-actions">
+                <a href="https://wa.me/5492216826109?text=Hola%20Juan%2C%20quiero%20saber%20m%C3%A1s%20sobre%20REGALBOXX" class="btn-info" target="_blank" rel="noopener">
+                    Más info
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-top">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                </div>
+                <span class="card-tag">E-commerce</span>
+            </div>
+            <h3>FICCTURA + UNIVERSO 404</h3>
+            <p>
+                Ecommerce para dos marcas de indumentaria (básicos premium y remeras con estampas)
+                que comparten backend, catálogo y carrito, desarrollado a partir del brief del cliente.
+            </p>
+            <div class="card-stack">
+                <span>Django</span><span>Multi-marca</span><span>Catálogo</span><span>Carrito</span>
+            </div>
+            <div class="card-actions">
+                <a href="https://wa.me/5492216826109?text=Hola%20Juan%2C%20quiero%20saber%20m%C3%A1s%20sobre%20FICCTURA%20%2B%20UNIVERSO%20404" class="btn-info" target="_blank" rel="noopener">
+                    Más info
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-top">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                </div>
+                <span class="card-tag">E-commerce</span>
+            </div>
+            <h3>Entre Lenguas</h3>
+            <p>
+                Tienda bilingüe (español / inglés) con carrito y checkout adaptados a cada idioma,
+                pensada para vender a público local e internacional.
+            </p>
+            <div class="card-stack">
+                <span>Django</span><span>i18n ES/EN</span><span>Carrito</span>
+            </div>
+            <div class="card-actions">
+                <a href="https://wa.me/5492216826109?text=Hola%20Juan%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Entre%20Lenguas" class="btn-info" target="_blank" rel="noopener">
+                    Más info
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-top">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                </div>
+                <span class="card-tag">Plataforma</span>
+            </div>
+            <h3>Neuroeducación</h3>
+            <p>
+                Plataforma educativa con cuentas de usuario, cursos, dashboard de progreso y pagos
+                integrados: una app completa, no solo un sitio informativo.
+            </p>
+            <div class="card-stack">
+                <span>Django</span><span>Cuentas</span><span>Pagos</span><span>Dashboard</span>
+            </div>
+            <div class="card-actions">
+                <a href="https://wa.me/5492216826109?text=Hola%20Juan%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Neuroeducaci%C3%B3n" class="btn-info" target="_blank" rel="noopener">
+                    Más info
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-top">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-7-7 18-2-8-8-3z"/></svg>
+                </div>
+                <span class="card-tag">Landing</span>
+            </div>
+            <h3>Impulsa Studio</h3>
+            <p>
+                Landing para una agencia de marketing digital: presentación de servicios, contacto
+                directo por WhatsApp y diseño pensado para generar consultas.
+            </p>
+            <div class="card-stack">
+                <span>Django</span><span>Landing</span><span>WhatsApp CTA</span>
+            </div>
+            <div class="card-actions">
+                <a href="https://wa.me/5492216826109?text=Hola%20Juan%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Impulsa%20Studio" class="btn-info" target="_blank" rel="noopener">
+                    Más info
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-top">
+                <div class="card-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z"/></svg>
+                </div>
+                <span class="card-tag">A medida</span>
+            </div>
+            <h3>¿Tenés un proyecto en mente?</h3>
+            <p>
+                Sumo a este portfolio nuevos proyectos todo el tiempo: e-commerce, plataformas,
+                landings o lo que tu negocio necesite. Contame tu idea y armamos algo juntos.
+            </p>
+            <div class="card-actions">
+                <a href="https://wa.me/5492216826109?text=Hola%20Juan%2C%20tengo%20un%20proyecto%20en%20mente" class="btn-info" target="_blank" rel="noopener">
+                    Contame tu idea
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+    <div class="section-head reveal">
+        <span class="eyebrow"><span class="dot"></span> Stack</span>
+        <h2>Con qué trabajo</h2>
+        <p>Las herramientas que uso todos los días para construir estos proyectos.</p>
+    </div>
+
+    <div class="skills-grid reveal">
+        <div class="skill-chip">Python</div>
+        <div class="skill-chip">Django</div>
+        <div class="skill-chip">JavaScript</div>
+        <div class="skill-chip">HTML5 / CSS3</div>
+        <div class="skill-chip">PostgreSQL</div>
+        <div class="skill-chip">SQLite</div>
+        <div class="skill-chip">Git / GitHub</div>
+        <div class="skill-chip">Deploy (Render / Heroku)</div>
+        <div class="skill-chip">Pagos online</div>
+        <div class="skill-chip">Panel admin</div>
+        <div class="skill-chip">E-commerce</div>
+        <div class="skill-chip">UX / UI</div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta reveal">
+    <h2>¿Charlamos sobre tu proyecto?</h2>
+    <p>Contame qué necesitás y te digo cómo lo resolvería: e-commerce, plataforma, landing o algo distinto.</p>
+    <a href="https://wa.me/5492216826109?text=Hola%20Juan%2C%20quiero%20contarte%20sobre%20mi%20proyecto" class="btn btn-primary" target="_blank" rel="noopener">
+        Escribime ahora
+    </a>
+    <div class="cta-links">
+        <a href="mailto:juanperdomo918918@gmail.com" class="btn-info">juanperdomo918918@gmail.com</a>
+        <a href="https://jpweb.com.ar" class="btn-info" target="_blank" rel="noopener">jpweb.com.ar</a>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-brand">
+            <span class="logo-badge">JP</span>
+            Juan Perdomo
+        </div>
+        <div class="footer-links">
+            <a href="#top">Inicio</a>
+            <a href="#sobre">Sobre mí</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#skills">Skills</a>
+            <a href="https://wa.me/5492216826109" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        © <span id="year"></span> Juan Perdomo — Desarrollador Web Full Stack
+    </div>
+</footer>
+
+<!-- WHATSAPP FLOTANTE -->
+<a class="whatsapp-float" href="https://wa.me/5492216826109" target="_blank" rel="noopener" aria-label="Escribime por WhatsApp">
+    <svg viewBox="0 0 32 32"><path d="M16.001 3C9.376 3 4 8.373 4 15c0 2.494.75 4.812 2.037 6.744L4 29l7.44-1.955A11.93 11.93 0 0 0 16.001 27C22.626 27 28 21.627 28 15S22.626 3 16.001 3zm6.949 17.104c-.29.816-1.44 1.5-2.35 1.694-.626.132-1.443.238-4.194-.9-3.523-1.46-5.79-5.033-5.966-5.267-.169-.234-1.428-1.9-1.428-3.625 0-1.725.9-2.572 1.222-2.924.29-.317.633-.397.844-.397.211 0 .422.002.606.011.194.01.454-.074.71.542.29.694.986 2.394 1.072 2.569.087.175.145.379.029.613-.116.234-.174.379-.343.585-.169.205-.354.457-.506.613-.169.175-.345.365-.148.716.198.35.879 1.451 1.887 2.35 1.297 1.155 2.39 1.512 2.741 1.681.35.169.554.14.759-.084.204-.223.876-1.022 1.11-1.372.234-.35.468-.29.789-.175.32.116 2.033.958 2.383 1.133.35.175.583.263.671.409.087.146.087.847-.203 1.663z"/></svg>
+</a>
+
+<script>
+    // --- Menú mobile ---
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', isOpen);
+        navToggle.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            navToggle.setAttribute('aria-expanded', false);
+        });
+    });
+
+    // --- Animaciones al hacer scroll ---
+    const animated = document.querySelectorAll('.card, .reveal');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    animated.forEach(el => observer.observe(el));
+
+    // --- Año dinámico ---
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
