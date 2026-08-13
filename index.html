@@ -6,8 +6,44 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Juan Perdomo — desarrollador web full stack. Construyo e-commerce, plataformas y landings a medida con Python/Django, de punta a punta.">
 <meta name="theme-color" content="#0a0e17">
+<link rel="canonical" href="https://jpweb.com.ar/">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Juan Perdomo">
+<meta name="keywords" content="Juan Perdomo, desarrollador web, full stack, Python, Django, e-commerce, landing page, Argentina">
 
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a0e17'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='28' font-weight='700' fill='%2300E5C7' text-anchor='middle'%3EJP%3C/text%3E%3C/svg%3E">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:url" content="https://jpweb.com.ar/">
+<meta property="og:site_name" content="Juan Perdomo">
+<meta property="og:title" content="Juan Perdomo | Desarrollador Web Full Stack">
+<meta property="og:description" content="Desarrollador web full stack especializado en Python/Django. E-commerce, plataformas y landings a medida, de punta a punta.">
+<meta property="og:image" content="https://jpweb.com.ar/img/juan.jpg">
+<meta property="og:image:width" content="900">
+<meta property="og:image:height" content="1200">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Juan Perdomo | Desarrollador Web Full Stack">
+<meta name="twitter:description" content="Desarrollador web full stack especializado en Python/Django. E-commerce, plataformas y landings a medida, de punta a punta.">
+<meta name="twitter:image" content="https://jpweb.com.ar/img/juan.jpg">
+
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/favicon.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Juan Perdomo",
+  "jobTitle": "Desarrollador Web Full Stack",
+  "url": "https://jpweb.com.ar/",
+  "image": "https://jpweb.com.ar/img/juan.jpg",
+  "email": "mailto:juanperdomo918918@gmail.com",
+  "knowsAbout": ["Python", "Django", "JavaScript", "E-commerce", "Desarrollo Web"],
+  "address": { "@type": "PostalAddress", "addressCountry": "AR" }
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -141,10 +177,11 @@
         font-size: 18px;
     }
 
-    .nav-logo .logo-badge {
+    .logo-badge {
         width: 34px;
         height: 34px;
-        border-radius: 9px;
+        flex-shrink: 0;
+        border-radius: 50%;
         background: linear-gradient(135deg, var(--cyan), var(--violet));
         display: flex;
         align-items: center;
@@ -153,6 +190,14 @@
         font-weight: 700;
         color: #05070c;
         font-size: 14px;
+        overflow: hidden;
+    }
+
+    .logo-badge img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
     }
 
     .nav-links { display: flex; align-items: center; gap: 30px; }
@@ -654,7 +699,7 @@
 <nav class="navbar">
     <div class="nav-container">
         <a href="#top" class="nav-logo">
-            <span class="logo-badge">JP</span>
+            <span class="logo-badge"><img src="img/juan.jpg" alt="Juan Perdomo"></span>
             Juan Perdomo
         </a>
 
@@ -971,7 +1016,7 @@
 <footer>
     <div class="footer-inner">
         <div class="footer-brand">
-            <span class="logo-badge">JP</span>
+            <span class="logo-badge"><img src="img/juan.jpg" alt="Juan Perdomo"></span>
             Juan Perdomo
         </div>
         <div class="footer-links">
