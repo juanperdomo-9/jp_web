@@ -157,7 +157,7 @@
 
   /* proyectos list */
   .proj-list { border-top: 1px solid var(--line); }
-  .proj-row { display: grid; grid-template-columns: 2.4em 1fr auto auto; align-items: center; gap: 18px; padding-block: 20px; border-bottom: 1px solid var(--line); cursor: pointer; background: none; border-left: none; border-right: none; border-top: none; width: 100%; text-align: left; font: inherit; color: inherit; }
+  .proj-row { display: grid; grid-template-columns: 2.4em 1fr auto auto; align-items: center; gap: 18px; padding-block: 20px; border-bottom: 1px solid var(--line); cursor: pointer; background: none; border-left: none; border-right: none; border-top: none; width: 100%; text-align: left; font: inherit; color: inherit; text-decoration: none; }
   .proj-row:hover, .proj-row:focus-visible { background: var(--paper-raised); outline: none; }
   .proj-idx { font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--ink-faint); }
   .proj-name { font-size: 18px; font-weight: 700; margin: 0 0 3px; }
@@ -165,9 +165,11 @@
   .proj-tag { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--pine); background: var(--pine-bg); padding: 4px 9px; white-space: nowrap; }
   .proj-arrow { font-size: 12.5px; color: var(--ink-faint); white-space: nowrap; }
   .proj-row:hover .proj-arrow { color: var(--accent-ink); }
-  .proj-row.ghost { border-style: dashed; }
+  .proj-row.ghost { border-style: dashed; border-bottom: 1px dashed var(--line); }
   .proj-row.ghost .proj-name { color: var(--ink); }
-  @media (max-width: 640px) { .proj-row { grid-template-columns: 2em 1fr; row-gap: 8px; } .proj-tag, .proj-arrow { grid-column: 2; justify-self: start; } }
+  .proj-row.ghost .proj-arrow { color: var(--accent-ink); font-weight: 500; }
+  .proj-tag.ghost-tag { color: var(--accent-ink); background: color-mix(in srgb, var(--accent) 12%, transparent); }
+  @media (max-width: 640px) { .proj-row { grid-template-columns: 2em 1fr; row-gap: 10px; } .proj-tag, .proj-arrow { grid-column: 2; justify-self: start; } }
 
   /* skills */
   .stack-line { padding-block: 8px 44px; font-size: 15px; line-height: 2.1; border-bottom: 1px solid var(--line); }
@@ -227,12 +229,12 @@
   .cursor { display: inline-block; width: .5ch; background: var(--accent); margin-left: 2px; animation: blink 1s step-end infinite; }
   @keyframes blink { 50% { opacity: 0; } }
 
-  #boot { position: fixed; inset: 0; background: var(--ink); color: var(--paper); z-index: 100; display: flex; align-items: center; justify-content: center; transition: opacity .5s ease, visibility .5s; }
+  #boot { position: fixed; inset: 0; background: #15181D; color: #F1F0EA; z-index: 100; display: flex; align-items: center; justify-content: center; transition: opacity .5s ease, visibility .5s; }
   #boot.hide { opacity: 0; visibility: hidden; pointer-events: none; }
   #boot pre { font-family: 'IBM Plex Mono', monospace; font-size: 13.5px; line-height: 1.9; margin: 0; white-space: pre-wrap; padding: 0 20px; text-align: left; }
-  #boot .p { color: var(--ink-faint); }
-  #boot .o { color: var(--accent); }
-  #boot .cur { display: inline-block; width: 7px; height: 15px; background: var(--paper); vertical-align: -2px; animation: blink 0.9s step-end infinite; }
+  #boot .p { color: #86887F; }
+  #boot .o { color: #FF7A45; }
+  #boot .cur { display: inline-block; width: 7px; height: 15px; background: #F1F0EA; vertical-align: -2px; animation: blink 0.9s step-end infinite; }
 
   @media (prefers-reduced-motion: reduce) {
     .reveal, .stagger { opacity: 1 !important; transform: none !important; transition: none !important; }
@@ -397,9 +399,12 @@
     row.addEventListener('click', function () { openModal(p); });
     list.appendChild(row);
   });
-  var ghost = document.createElement('div');
+  var ghost = document.createElement('a');
   ghost.className = 'proj-row ghost';
-  ghost.innerHTML = '<span class="proj-idx">08</span><span><span class="proj-name">¿Tenés un proyecto en mente?</span><p class="proj-desc">Sumo proyectos nuevos todo el tiempo: e-commerce, plataformas, landings o lo que necesite tu negocio.</p></span><span></span><a class="btn-mono" href="https://wa.me/5492213523930?text=Hola%20Juan%2C%20tengo%20un%20proyecto%20en%20mente" target="_blank" rel="noopener">contame tu idea →</a>';
+  ghost.href = 'https://wa.me/5492213523930?text=Hola%20Juan%2C%20tengo%20un%20proyecto%20en%20mente';
+  ghost.target = '_blank';
+  ghost.rel = 'noopener';
+  ghost.innerHTML = '<span class="proj-idx">08</span><span><span class="proj-name">¿Tenés un proyecto en mente?</span><p class="proj-desc">Sumo proyectos nuevos todo el tiempo: e-commerce, plataformas, landings o lo que necesite tu negocio.</p></span><span class="proj-tag ghost-tag">a medida</span><span class="proj-arrow">contame tu idea →</span>';
   list.appendChild(ghost);
 
   var veil = document.getElementById('veil'), device = document.getElementById('device'), frame = document.getElementById('mFrame');
