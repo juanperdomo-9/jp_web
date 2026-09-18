@@ -165,7 +165,8 @@
   .proj-tag { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--pine); background: var(--pine-bg); padding: 4px 9px; white-space: nowrap; }
   .proj-arrow { font-size: 12.5px; color: var(--ink-faint); white-space: nowrap; }
   .proj-row:hover .proj-arrow { color: var(--accent-ink); }
-  .proj-row.ghost { border-style: dashed; border-bottom: 1px dashed var(--line); }
+  .proj-row.ghost { border: 1px dashed var(--line); padding: 18px 20px; margin-block: 22px; }
+  .proj-row.ghost:hover { border-color: var(--accent-ink); }
   .proj-row.ghost .proj-name { color: var(--ink); }
   .proj-row.ghost .proj-arrow { color: var(--accent-ink); font-weight: 500; }
   .proj-tag.ghost-tag { color: var(--accent-ink); background: color-mix(in srgb, var(--accent) 12%, transparent); }
@@ -229,24 +230,31 @@
   .cursor { display: inline-block; width: .5ch; background: var(--accent); margin-left: 2px; animation: blink 1s step-end infinite; }
   @keyframes blink { 50% { opacity: 0; } }
 
-  #boot { position: fixed; inset: 0; background: #15181D; color: #F1F0EA; z-index: 100; display: flex; align-items: center; justify-content: center; transition: opacity .5s ease, visibility .5s; }
+  #boot { position: fixed; inset: 0; background: #15181D; color: #F1F0EA; z-index: 100; display: flex; align-items: center; justify-content: center; transition: opacity .45s ease, visibility .45s; }
   #boot.hide { opacity: 0; visibility: hidden; pointer-events: none; }
-  #boot pre { font-family: 'IBM Plex Mono', monospace; font-size: 13.5px; line-height: 1.9; margin: 0; white-space: pre-wrap; padding: 0 20px; text-align: left; }
-  #boot .p { color: #86887F; }
-  #boot .o { color: #FF7A45; }
-  #boot .cur { display: inline-block; width: 7px; height: 15px; background: #F1F0EA; vertical-align: -2px; animation: blink 0.9s step-end infinite; }
+  .boot-inner { text-align: center; }
+  .boot-logo { font-size: 46px; letter-spacing: -0.01em; color: #F1F0EA; }
+  .boot-logo .cur { display: inline-block; width: .5ch; background: #FF7A45; margin-left: 3px; animation: blink 1s step-end infinite; }
+  .boot-bar { width: 200px; height: 2px; background: #2B2E34; margin: 22px auto 10px; overflow: hidden; border-radius: 2px; }
+  .boot-bar-fill { height: 100%; width: 0%; background: #FF7A45; }
+  .boot-pct { width: 200px; margin: 0 auto; display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: #6C6F70; }
+  .boot-pct span:last-child { color: #FF7A45; }
 
   @media (prefers-reduced-motion: reduce) {
     .reveal, .stagger { opacity: 1 !important; transform: none !important; transition: none !important; }
     #boot { display: none; }
-    .cursor, #boot .cur { animation: none; }
+    .cursor, .boot-logo .cur { animation: none; }
   }
 </style>
 </head>
 <body>
 
 <div id="boot" aria-hidden="true">
-  <pre><span class="p">$</span> whoami<br>Juan Perdomo — full stack developer<br><span class="p">$</span> status --check<br><span class="o">✓</span> disponible para nuevos proyectos<span class="cur"></span></pre>
+  <div class="boot-inner">
+    <div class="boot-logo display">JP<span class="cur">&nbsp;</span></div>
+    <div class="boot-bar"><div class="boot-bar-fill" id="bootFill"></div></div>
+    <div class="boot-pct"><span>cargando</span><span id="bootPct">0%</span></div>
+  </div>
 </div>
 
 <div class="statusbar">
@@ -469,7 +477,23 @@
     boot.classList.add('hide');
     wake();
   } else {
-    setTimeout(function () { boot.classList.add('hide'); wake(); }, 900);
+    var fill = document.getElementById('bootFill');
+    var pct = document.getElementById('bootPct');
+    var start = performance.now();
+    var duration = 850;
+    function tick(now) {
+      var t = Math.min((now - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - t, 3);
+      var p = Math.round(eased * 100);
+      fill.style.width = p + '%';
+      pct.textContent = p + '%';
+      if (t < 1) {
+        requestAnimationFrame(tick);
+      } else {
+        setTimeout(function () { boot.classList.add('hide'); wake(); }, 150);
+      }
+    }
+    requestAnimationFrame(tick);
   }
 </script>
 </body>
