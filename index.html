@@ -5,11 +5,11 @@
 <title>Juan Perdomo | Desarrollador Web Full Stack</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Juan Perdomo — desarrollador web full stack. Construyo e-commerce, plataformas y landings a medida con Python/Django, de punta a punta.">
-<meta name="theme-color" content="#15181D">
+<meta name="theme-color" content="#161719">
 <link rel="canonical" href="https://jpweb.com.ar/">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Juan Perdomo">
-<meta name="keywords" content="Juan Perdomo, desarrollador web, full stack, Python, Django, e-commerce, landing page, Argentina">
+<meta name="keywords" content="Juan Perdomo, desarrollador web, full stack, Python, Django, e-commerce, landing page, La Plata, Argentina">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
@@ -17,16 +17,16 @@
 <meta property="og:url" content="https://jpweb.com.ar/">
 <meta property="og:site_name" content="Juan Perdomo">
 <meta property="og:title" content="Juan Perdomo | Desarrollador Web Full Stack">
-<meta property="og:description" content="Desarrollador web full stack especializado en Python/Django. E-commerce, plataformas y landings a medida, de punta a punta.">
-<meta property="og:image" content="https://jpweb.com.ar/img/juan.jpg">
-<meta property="og:image:width" content="900">
-<meta property="og:image:height" content="1200">
+<meta property="og:description" content="Webs de punta a punta, hechas en La Plata. Python/Django, e-commerce, plataformas y landings a medida.">
+<meta property="og:image" content="https://jpweb.com.ar/img/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Juan Perdomo | Desarrollador Web Full Stack">
-<meta name="twitter:description" content="Desarrollador web full stack especializado en Python/Django. E-commerce, plataformas y landings a medida, de punta a punta.">
-<meta name="twitter:image" content="https://jpweb.com.ar/img/juan.jpg">
+<meta name="twitter:description" content="Webs de punta a punta, hechas en La Plata. Python/Django, e-commerce, plataformas y landings a medida.">
+<meta name="twitter:image" content="https://jpweb.com.ar/img/og-cover.jpg">
 
 <link rel="icon" type="image/png" href="/img/favicon.png">
 <link rel="apple-touch-icon" href="/img/favicon.png">
@@ -41,460 +41,696 @@
   "image": "https://jpweb.com.ar/img/juan.jpg",
   "email": "mailto:juanperdomo918918@gmail.com",
   "knowsAbout": ["Python", "Django", "JavaScript", "E-commerce", "Desarrollo Web"],
-  "address": { "@type": "PostalAddress", "addressCountry": "AR" }
+  "address": { "@type": "PostalAddress", "addressLocality": "La Plata", "addressCountry": "AR" }
 }
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Work+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <style>
+  /* Layout: hero de una pantalla. Texto a la izquierda; el plano de La Plata (orientación real, -38°) ocupa la derecha y se funde por debajo del texto. En el celular el plano pasa abajo. */
   :root {
-    --paper: #F1F0EA;
-    --paper-raised: #E7E4D8;
-    --ink: #15181D;
-    --ink-soft: #52565F;
-    --ink-faint: #86887F;
-    --line: #CBC7B8;
-    --accent: #E14A1B;
-    --accent-ink: #A83811;
-    --pine: #1F5C4F;
-    --pine-bg: #DFE7DD;
-    --term-bg: #1B1D22;
-    --term-line: #FFFFFF1A;
+    --bg: #161719; --bg-2: #1d1f22; --calle: #26292d; --avenida: #33373c; --crema: #efede6; --crema-2: #a9a69d; --crema-3: #6f6c66;
+    --naranja: #ff6a2b; --naranja-suave: rgb(255 106 43 / 0.16); --verde: #3ecf8e;
+    --display: "Archivo", system-ui, sans-serif; --mono: "IBM Plex Mono", ui-monospace, monospace;
+    color-scheme: dark;
   }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --paper: #15171B; --paper-raised: #1D2024; --ink: #F0EFE9; --ink-soft: #ABADAC;
-      --ink-faint: #6C6F70; --line: #33362F; --accent: #FF6B34; --accent-ink: #FF8556;
-      --pine: #4FA391; --pine-bg: #1C2924; --term-bg: #0E0F12; --term-line: #FFFFFF14;
-    }
-  }
-  :root[data-theme="dark"] {
-    --paper: #15171B; --paper-raised: #1D2024; --ink: #F0EFE9; --ink-soft: #ABADAC;
-    --ink-faint: #6C6F70; --line: #33362F; --accent: #FF6B34; --accent-ink: #FF8556;
-    --pine: #4FA391; --pine-bg: #1C2924; --term-bg: #0E0F12; --term-line: #FFFFFF14;
-  }
-
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Work Sans', Arial, sans-serif; -webkit-font-smoothing: antialiased; }
-  .wrap { max-width: 940px; margin: 0 auto; padding: 0 24px; }
-  .display { font-family: 'Archivo Black', Arial, sans-serif; text-wrap: balance; }
-  .mono { font-family: 'IBM Plex Mono', ui-monospace, monospace; }
+  html, body { background: var(--bg); color: var(--crema); }
+  html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+  body { margin: 0; font: 16px/1.6 var(--display); }
+  h1, p { margin: 0; }
   a { color: inherit; }
   img { max-width: 100%; }
-  p { line-height: 1.7; color: var(--ink-soft); }
-  ::selection { background: var(--accent); color: var(--paper); }
-  section { scroll-margin-top: 54px; }
 
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px; font-weight: 500; text-decoration: none; font-size: 14.5px; border: 1px solid var(--ink); transition: background .15s, color .15s, transform .15s; }
-  .btn-solid { background: var(--ink); color: var(--paper); }
-  .btn-solid:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-2px); }
-  .btn-ghost { background: none; color: var(--ink); }
-  .btn-ghost:hover { border-color: var(--accent); color: var(--accent-ink); transform: translateY(-2px); }
-  .btn-mono { font-family: 'IBM Plex Mono', monospace; font-size: 13px; text-decoration: none; color: var(--accent-ink); border-bottom: 1px solid var(--accent-ink); padding-bottom: 2px; }
-  .btn-mono:hover { color: var(--ink); border-color: var(--ink); }
+  .hero { position: relative; display: grid; grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); align-items: center;
+    max-width: 1240px; min-height: min(720px, 92vh); margin-inline: auto; border: 1px solid var(--calle); overflow: hidden; }
 
-  /* nav */
-  nav.top { position: sticky; top: 0; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); z-index: 40; }
-  .nav-row { display: flex; align-items: center; justify-content: space-between; padding-block: 14px; }
-  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 15px; }
-  .brand img { width: 30px; height: 30px; border-radius: 50%; object-fit: cover; border: 1px solid var(--line); display: block; }
-  .nav-links { display: flex; align-items: center; gap: 26px; font-size: 13.5px; }
-  .nav-links a { text-decoration: none; color: var(--ink-soft); }
-  .nav-links a:hover { color: var(--accent-ink); }
-  .nav-links a.cta { color: var(--accent-ink); font-family: 'IBM Plex Mono', monospace; }
-  .nav-toggle { display: none; background: none; border: 1px solid var(--line); width: 34px; height: 34px; color: var(--ink); cursor: pointer; }
-  @media (max-width: 720px) {
-    .nav-links { display: none; position: absolute; top: 100%; left: 0; right: 0; background: var(--paper); border-bottom: 1px solid var(--line); flex-direction: column; align-items: flex-start; gap: 4px; padding: 10px 24px 16px; }
-    .nav-links.open { display: flex; }
-    .nav-links a { width: 100%; padding: 8px 0; }
-    .nav-toggle { display: block; }
+  .copy { position: relative; z-index: 2; display: grid; gap: 24px; min-width: 0; padding: 64px clamp(20px, 4vw, 48px) 56px; }
+  .hola { font: 500 0.9375rem var(--mono); color: var(--crema-2); }
+  .hola::before { content: "> "; color: var(--naranja); }
+  h1 { display: grid; font-weight: 900; font-size: clamp(3.4rem, 8.4vw, 7rem); line-height: 0.86; letter-spacing: -0.045em; text-transform: uppercase; }
+  .palabra { display: block; overflow: hidden; padding-bottom: 0.04em; }
+  .palabra span { display: block; animation: subir 0.9s cubic-bezier(0.2, 0.9, 0.1, 1) backwards; animation-delay: var(--d); }
+  .palabra--naranja { color: var(--naranja); }
+  @keyframes subir { from { transform: translateY(105%); } }
+  .lema { font-weight: 800; font-size: clamp(1.25rem, 2.2vw, 1.6rem); line-height: 1.2; letter-spacing: -0.02em; max-width: 24ch; }
+  .lema em { font-style: normal; color: var(--naranja); }
+  .bajada { color: var(--crema-2); font-size: 1.0625rem; font-weight: 500; max-width: 46ch; }
+  .acciones { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px; border: 1px solid var(--crema); font: 600 1rem var(--display); color: var(--crema);
+    text-decoration: none; transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease; cursor: pointer; }
+  .btn:hover { transform: translate(-2px, -2px); box-shadow: 4px 4px 0 var(--naranja); }
+  .btn--lleno { background: var(--crema); color: var(--bg); }
+  .btn:focus-visible { outline: 2px solid var(--naranja); outline-offset: 3px; }
+  .stack { display: flex; flex-wrap: wrap; gap: 4px 14px; font: 400 0.8125rem var(--mono); color: var(--crema-3); }
+  .stack span::before { content: "/ "; color: var(--naranja); }
+  .entra { animation: aparecer 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) backwards; animation-delay: var(--d); }
+  @keyframes aparecer { from { opacity: 0; transform: translateY(14px); } }
+
+  .mapa { position: absolute; top: 0; right: 0; bottom: 0; width: 64%; z-index: 1;
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 22%); mask-image: linear-gradient(to right, transparent, #000 22%); }
+  .mapa svg { width: 100%; height: 100%; display: block; transform: translate(var(--px, 0), var(--py, 0)); transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .luz { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(240px circle at var(--lx, 60%) var(--ly, 50%), var(--naranja-suave), transparent 70%); }
+
+  .calle { stroke: var(--calle); stroke-width: 1; animation: fundido 1s ease backwards; }
+  .avenida { stroke: var(--avenida); stroke-width: 2.4; }
+  .plaza { fill: var(--bg-2); stroke: var(--avenida); stroke-width: 1.4; animation: fundido 0.6s ease backwards; animation-delay: 0.6s; }
+  .moreno { fill: var(--naranja-suave); stroke: var(--naranja); stroke-width: 2; }
+  .anillo { fill: none; stroke: var(--naranja); stroke-width: 1.5; transform-box: fill-box; transform-origin: center; animation: onda 2.6s ease-out infinite 1.2s; opacity: 0; }
+  @keyframes onda { 0% { transform: scale(1); opacity: 0.8; } 100% { transform: scale(4); opacity: 0; } }
+  .diag { fill: none; stroke: var(--naranja); stroke-width: 2.2; stroke-dasharray: 1; stroke-dashoffset: 1; stroke-linecap: round;
+    animation: trazar 1.4s cubic-bezier(0.6, 0, 0.2, 1) forwards; animation-delay: var(--d); }
+  .diag--rombo { stroke-width: 1.6; opacity: 0.75; }
+  .ruta { fill: none; stroke: var(--crema-2); stroke-width: 2; stroke-dasharray: 1; stroke-dashoffset: 1; stroke-linecap: round; stroke-linejoin: round; opacity: 0.55;
+    animation: trazar 1s cubic-bezier(0.6, 0, 0.2, 1) forwards; animation-delay: var(--d); transition: stroke 0.25s ease, opacity 0.25s ease, stroke-width 0.25s ease; }
+  .ruta.is-activa { stroke: var(--naranja); opacity: 1; stroke-width: 3; }
+  @keyframes trazar { to { stroke-dashoffset: 0; } }
+  @keyframes fundido { from { opacity: 0; } }
+
+  .pin { cursor: pointer; animation: caer 0.6s cubic-bezier(0.3, 1.6, 0.5, 1) backwards; animation-delay: var(--d); }
+  .pin__punto { fill: var(--naranja); stroke: var(--bg); stroke-width: 3; transition: transform 0.25s ease; transform-box: fill-box; transform-origin: center; }
+  .pin__caja { fill: var(--bg-2); stroke: var(--avenida); transition: stroke 0.25s ease, fill 0.25s ease; }
+  .pin__texto { fill: var(--crema); font: 500 13px var(--mono); }
+  .pin__tipo { fill: var(--crema-3); font: 400 11px var(--mono); }
+  .pin:hover .pin__caja, .pin:focus-visible .pin__caja, .pin.is-activo .pin__caja { stroke: var(--naranja); fill: #23201e; }
+  .pin:hover .pin__punto, .pin.is-activo .pin__punto { transform: scale(1.35) rotate(45deg); }
+  .pin:focus-visible { outline: none; }
+  @keyframes caer { from { opacity: 0; transform: translateY(-18px); } }
+  .rotulo { fill: var(--crema-3); font: 500 11px var(--mono); letter-spacing: 0.08em; animation: fundido 0.8s ease backwards 1.4s; }
+
+  .coords { position: absolute; right: clamp(16px, 3vw, 32px); bottom: 18px; z-index: 2; display: grid; justify-items: end; gap: 2px;
+    font: 400 0.75rem var(--mono); color: var(--crema-3); font-variant-numeric: tabular-nums; pointer-events: none; }
+  .coords b { color: var(--crema-2); font-weight: 500; }
+  .norte { position: absolute; right: clamp(16px, 3vw, 32px); top: 64px; z-index: 2; display: grid; justify-items: center; gap: 2px; font: 600 0.75rem var(--mono); color: var(--crema-2); }
+  .norte svg path { fill: var(--naranja); }
+
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+    .copy { padding-bottom: 8px; padding-top: 28px; }
+    .mapa { position: relative; width: 100%; height: 380px; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 18%); mask-image: linear-gradient(to bottom, transparent, #000 18%); }
+    .norte { top: auto; bottom: 330px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before { animation: none !important; transition: none !important; }
+    .diag, .ruta { stroke-dashoffset: 0; }
+    .anillo { display: none; }
   }
 
-  /* statusbar */
-  .statusbar { border-bottom: 1px solid var(--line); font-size: 12px; padding-block: 8px; color: var(--ink-faint); }
-  .statusbar .wrap { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
-  .dot-live { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--pine); margin-right: 7px; box-shadow: 0 0 0 3px var(--pine-bg); }
+  /* ---------- Resto de la página: bloques con borde fino que se tocan ---------- */
+  .nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; max-width: 1240px; margin: 0 auto -1px; border: 1px solid var(--calle);
+    background: rgb(22 23 25 / 0.86); backdrop-filter: blur(12px) saturate(140%); -webkit-backdrop-filter: blur(12px) saturate(140%); }
+  .nav__estado { display: flex; justify-content: space-between; gap: 6px 20px; flex-wrap: wrap; padding: 7px clamp(20px, 4vw, 48px); border-bottom: 1px solid var(--calle);
+    font: 400 0.75rem var(--mono); color: var(--crema-2); overflow: hidden; max-height: 40px; transition: max-height 0.35s ease, padding 0.35s ease, opacity 0.25s ease; }
+  .nav__estado span { display: inline-flex; align-items: center; gap: 8px; }
+  .nav__estado i { width: 7px; height: 7px; border-radius: 50%; background: var(--verde); animation: latir 2s infinite; }
+  @keyframes latir { 0% { box-shadow: 0 0 0 0 rgb(62 207 142 / 0.6); } 70%, 100% { box-shadow: 0 0 0 8px transparent; } }
+  .nav__estado b { color: var(--crema); font-weight: 500; font-variant-numeric: tabular-nums; }
+  .nav.is-chica .nav__estado { max-height: 0; padding-block: 0; opacity: 0; border-bottom-color: transparent; }
+  .nav__barra { display: flex; align-items: center; gap: 20px; padding: 12px clamp(20px, 4vw, 48px); transition: padding 0.35s ease; }
+  .nav.is-chica .nav__barra { padding-block: 8px; }
+  .yo { position: relative; display: flex; align-items: center; gap: 12px; margin-right: auto; color: var(--crema); text-decoration: none; }
+  .yo__foto { position: relative; flex: none; width: 46px; height: 46px; transition: width 0.35s ease, height 0.35s ease; }
+  .nav.is-chica .yo__foto { width: 38px; height: 38px; }
+  .yo__foto img { display: block; width: 100%; height: 100%; border-radius: 50%; object-fit: cover; border: 2px solid var(--bg); box-shadow: 0 0 0 1.5px var(--naranja); transition: transform 0.3s ease; }
+  .yo:hover .yo__foto img { transform: rotate(-6deg) scale(1.06); }
+  .yo__foto::after { content: ""; position: absolute; right: 0; bottom: 1px; width: 11px; height: 11px; border-radius: 50%; background: var(--verde); border: 2px solid var(--bg); }
+  .yo__texto { display: grid; line-height: 1.2; }
+  .yo__texto strong { font-weight: 800; font-size: 1rem; letter-spacing: -0.01em; }
+  .yo__texto small { font: 400 0.75rem var(--mono); color: var(--crema-2); }
+  .yo__tarjeta { position: absolute; top: calc(100% + 14px); left: 0; z-index: 2; width: 280px; display: grid; gap: 10px; padding: 16px; border: 1px solid var(--avenida); background: var(--bg-2);
+    box-shadow: 0 24px 50px -16px rgb(0 0 0 / 0.7); opacity: 0; transform: translateY(-6px); pointer-events: none; transition: opacity 0.2s ease, transform 0.25s ease; }
+  .yo:hover .yo__tarjeta, .yo:focus-visible .yo__tarjeta { opacity: 1; transform: none; }
+  .yo__tarjeta > span { font-size: 0.875rem; color: var(--crema-2); font-weight: 500; }
+  .yo__datos { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; font: 400 0.75rem var(--mono); }
+  .yo__datos span:nth-child(odd) { color: var(--crema-3); }
+  .links { position: relative; display: flex; gap: 2px; }
+  .links a { position: relative; z-index: 1; display: inline-flex; align-items: baseline; gap: 6px; padding: 8px 14px; color: var(--crema-2); text-decoration: none;
+    font: 500 0.875rem var(--mono); transition: color 0.2s ease; }
+  .links a sup { font-size: 0.625rem; color: var(--naranja); }
+  .links a:hover, .links a.is-activo { color: var(--crema); }
+  .links__marca { position: absolute; bottom: -1px; height: 2px; background: var(--naranja); opacity: 0; transition: left 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), width 0.35s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.2s ease; }
+  .links__fondo { position: absolute; top: 0; bottom: 0; background: var(--bg-2); border: 1px solid var(--calle); opacity: 0; transition: left 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), width 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.2s ease; }
+  .nav__acciones { display: flex; align-items: center; gap: 8px; }
+  .icono { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid var(--avenida); color: var(--crema-2); background: none; text-decoration: none; cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease; }
+  .icono:hover { color: var(--crema); border-color: var(--naranja); transform: translateY(-2px); }
+  .nav .btn { padding: 9px 16px; font-size: 0.875rem; }
+  .nav__progreso { position: absolute; left: -1px; bottom: -1px; height: 2px; width: calc(var(--avance, 0) * (100% + 2px)); background: var(--naranja); }
+  .hamburguesa { display: none; }
+  .hamburguesa span { display: block; width: 18px; height: 2px; background: currentColor; transition: transform 0.3s ease, opacity 0.2s ease; }
+  .hamburguesa span + span { margin-top: 4px; }
+  .nav.is-abierta .hamburguesa span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .nav.is-abierta .hamburguesa span:nth-child(2) { opacity: 0; }
+  .nav.is-abierta .hamburguesa span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .panel { position: fixed; inset: 0; z-index: 19; display: grid; align-content: start; gap: 22px; padding: 120px 24px 32px; background: var(--bg); overflow: auto;
+    clip-path: circle(0 at calc(100% - 44px) 60px); visibility: hidden; transition: clip-path 0.6s cubic-bezier(0.7, 0, 0.2, 1), visibility 0s 0.6s; }
+  .nav.is-abierta + .panel { clip-path: circle(150% at calc(100% - 44px) 60px); visibility: visible; transition: clip-path 0.6s cubic-bezier(0.7, 0, 0.2, 1); }
+  .panel__links { display: grid; border-top: 1px solid var(--calle); }
+  .panel__links a { display: flex; justify-content: space-between; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--calle); color: var(--crema); text-decoration: none;
+    font-weight: 900; font-size: 2.2rem; line-height: 1; letter-spacing: -0.03em; text-transform: uppercase; }
+  .panel__links a sup { font: 500 0.75rem var(--mono); color: var(--naranja); }
+  .panel__links a:active { color: var(--naranja); }
+  .panel .acciones .btn { flex: 1; justify-content: center; }
+  .panel__pie { display: grid; gap: 4px; font: 400 0.8125rem var(--mono); color: var(--crema-2); }
+  @media (max-width: 960px) {
+    .links, .nav__acciones .icono:not(.hamburguesa), .nav__acciones .btn--lleno { display: none; }
+    .hamburguesa { display: grid; }
+    .yo__tarjeta { display: none; }
+  }
+  @media (min-width: 961px) { .panel { display: none; } }
 
-  /* masthead */
-  .masthead { padding-block: 52px 46px; border-bottom: 1px solid var(--line); }
-  .masthead-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: start; }
-  .name { font-size: clamp(42px, 7vw, 72px); line-height: 0.96; letter-spacing: -0.01em; margin: 0 0 18px; }
-  .name em { font-style: normal; color: var(--accent); }
-  .role-line { font-size: 16px; color: var(--ink-soft); max-width: 48ch; margin: 0 0 28px; }
-  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 22px; }
-  .hero-tags { display: flex; gap: 8px; flex-wrap: wrap; }
-  .hero-tags span { font-family: 'IBM Plex Mono', monospace; font-size: 11.5px; border: 1px solid var(--line); padding: 5px 10px; color: var(--ink-soft); }
+  .bloque { max-width: 1240px; margin: -1px auto 0; border: 1px solid var(--calle); padding: clamp(36px, 6vw, 88px) clamp(20px, 4vw, 48px); }
+  .etiqueta { margin-bottom: 18px; font: 500 0.8125rem var(--mono); color: var(--crema-2); }
+  .etiqueta::before { content: "/ "; color: var(--naranja); }
+  .titulo { font-weight: 900; font-size: clamp(2.2rem, 5vw, 4rem); line-height: 0.95; letter-spacing: -0.04em; text-transform: uppercase; text-wrap: balance; }
+  .titulo em { font-style: normal; color: var(--naranja); }
 
-  .term { background: var(--term-bg); border: 1px solid var(--line); font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; line-height: 2; color: #C8CBD3; }
-  .term-bar { display: flex; gap: 6px; padding: 10px 14px; border-bottom: 1px solid var(--term-line); }
-  .term-bar span { width: 9px; height: 9px; border-radius: 50%; background: #45484F; }
-  .term-body { padding: 16px 18px; overflow-x: auto; }
-  .term .k { color: #6D717C; } .term .s { color: var(--accent-ink); } .term .v { color: #E7E9EE; }
-  @media (prefers-color-scheme: dark) { .term .s { color: #FF9466; } }
-  :root[data-theme="dark"] .term .s { color: #FF9466; }
+  .sobre { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 5vw, 72px); align-items: start; }
+  .sobre__texto { display: grid; gap: 16px; color: var(--crema-2); font-weight: 500; }
+  .sobre__texto strong { color: var(--crema); }
+  .pilares { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: clamp(32px, 5vw, 56px); border-top: 1px solid var(--calle); }
+  .pilar { display: grid; gap: 8px; align-content: start; padding: 24px 24px 0 0; }
+  .pilar + .pilar { padding-left: 24px; border-left: 1px solid var(--calle); }
+  .pilar span { font: 500 0.75rem var(--mono); color: var(--naranja); }
+  .pilar h3 { margin: 0; font-size: 1.15rem; font-weight: 800; text-transform: uppercase; letter-spacing: -0.01em; }
+  .pilar p { color: var(--crema-2); font-size: 0.9375rem; }
 
-  @media (max-width: 760px) { .masthead-grid { grid-template-columns: 1fr; } }
+  .proy-cab { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px; margin-bottom: 28px; }
+  .proy-cab p { color: var(--crema-2); max-width: 42ch; font-weight: 500; }
+  .lista { border-top: 1px solid var(--calle); }
+  .fila { display: grid; grid-template-columns: 52px minmax(0, 1.1fr) minmax(0, 1fr) auto 24px; gap: 20px; align-items: center; width: 100%; padding: 22px 8px;
+    border: 0; border-bottom: 1px solid var(--calle); background: none; color: var(--crema); text-align: left; font: inherit; cursor: pointer; text-decoration: none;
+    transition: background-color 0.25s ease, padding 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .fila:hover, .fila:focus-visible { background: var(--bg-2); padding-left: 22px; outline: none; }
+  .fila__num { font: 500 0.8125rem var(--mono); color: var(--crema-3); }
+  .fila__nombre { font-weight: 900; font-size: clamp(1.35rem, 3vw, 2.2rem); line-height: 1; letter-spacing: -0.03em; text-transform: uppercase; transition: color 0.25s ease; }
+  .fila:hover .fila__nombre, .fila:focus-visible .fila__nombre, .fila--nueva .fila__nombre { color: var(--naranja); }
+  .fila__desc { color: var(--crema-2); font-size: 0.9375rem; font-weight: 500; }
+  .fila__tipo { padding: 4px 10px; border: 1px solid var(--avenida); font: 500 0.75rem var(--mono); color: var(--crema-2); white-space: nowrap; }
+  .fila__flecha { color: var(--crema-3); transition: transform 0.25s ease, color 0.25s ease; }
+  .fila:hover .fila__flecha { transform: translate(4px, -4px); color: var(--naranja); }
+  .flota { position: fixed; z-index: 30; width: 280px; aspect-ratio: 16 / 10; overflow: hidden; pointer-events: none; border: 1px solid var(--avenida);
+    box-shadow: 0 24px 50px -16px rgb(0 0 0 / 0.7); opacity: 0; transform: translate(-50%, -112%) scale(0.9) rotate(-3deg);
+    transition: opacity 0.2s ease, transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1); background: var(--bg-2); }
+  .flota.is-visible { opacity: 1; transform: translate(-50%, -112%) scale(1) rotate(-3deg); }
+  .flota img { width: 100%; display: block; object-fit: cover; object-position: top; height: 100%; }
+  @media (hover: none) { .flota { display: none; } }
 
-  /* section heads */
-  .section-head { padding-block: 30px 6px; display: flex; align-items: baseline; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-  .section-head h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .08em; margin: 0; font-family: 'IBM Plex Mono', monospace; font-weight: 500; }
-  .section-head p { margin: 0; font-size: 13.5px; max-width: 42ch; text-align: right; }
-  @media (max-width: 600px) { .section-head p { text-align: left; } }
+  /* Visor de cada proyecto */
+  .visor { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 16px; background: rgb(10 10 11 / 0.84); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+  .visor[hidden] { display: none; }
+  .visor__caja { width: min(1060px, 100%); max-height: 100%; display: grid; gap: 18px; overflow: auto; padding: clamp(18px, 3vw, 28px); border: 1px solid var(--avenida); background: var(--bg);
+    animation: aparecer 0.35s cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .visor__cab { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: start; gap: 14px; }
+  .visor__cab h3 { margin: 0; font-weight: 900; font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1; letter-spacing: -0.03em; text-transform: uppercase; }
+  .visor__cab p { margin-top: 8px; color: var(--crema-2); max-width: 54ch; font-weight: 500; }
+  .visor__ctrl { display: flex; gap: 8px; align-items: center; }
+  .seg { display: inline-flex; border: 1px solid var(--avenida); }
+  .seg button { padding: 9px 16px; border: 0; background: none; color: var(--crema-2); font: 500 0.8125rem var(--mono); cursor: pointer; }
+  .seg button[aria-pressed="true"] { background: var(--crema); color: var(--bg); }
+  .cerrar { width: 40px; height: 40px; border: 1px solid var(--avenida); background: none; color: var(--crema); font-size: 1.1rem; cursor: pointer; }
+  .escenario { display: grid; place-items: center; min-height: 520px; padding: 24px 0; background: radial-gradient(55% 60% at 50% 45%, rgb(255 106 43 / 0.12), transparent 70%); }
+  .desliza { animation: deslizar 10s ease-in-out infinite alternate; }
+  .escenario:hover .desliza { animation-play-state: paused; }
+  @keyframes deslizar { 0%, 12% { transform: translateY(0); } 88%, 100% { transform: translateY(var(--hasta, -30%)); } }
+  .visor__pie { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; font: 400 0.8125rem var(--mono); color: var(--crema-3); }
 
-  /* sobre */
-  .sobre-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; padding-block: 12px 40px; border-bottom: 1px solid var(--line); }
-  .sobre-grid p { font-size: 15px; margin: 0 0 16px; }
-  .sobre-grid .lead { color: var(--ink); font-size: 17px; }
-  .spec-list { border-top: 1px solid var(--line); }
-  .spec-row { padding-block: 16px; border-bottom: 1px solid var(--line); }
-  .spec-row .k { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--accent-ink); text-transform: uppercase; letter-spacing: .06em; display: block; margin-bottom: 6px; }
-  .spec-row p { margin: 0; font-size: 13.5px; }
-  @media (max-width: 760px) { .sobre-grid { grid-template-columns: 1fr; } }
+  .compu { width: min(820px, 100%); perspective: 1600px; filter: drop-shadow(0 40px 50px rgb(0 0 0 / 0.55)); }
+  .compu__tapa { position: relative; aspect-ratio: 16 / 10.2; padding: 16px 16px 20px; border-radius: 20px 20px 6px 6px;
+    background: linear-gradient(160deg, #3b3e44, #17191c 35%, #222529 70%, #131416);
+    box-shadow: inset 0 0 0 1.5px #5c6067, inset 0 0 0 5px #0a0b0d;
+    transform-origin: 50% 100%; animation: abrir-tapa 0.9s cubic-bezier(0.2, 0.9, 0.2, 1) both; }
+  @keyframes abrir-tapa { from { transform: rotateX(-82deg); filter: brightness(0.4); } }
+  .compu__tapa::before { content: ""; position: absolute; top: 6px; left: 50%; width: 6px; height: 6px; border-radius: 50%; transform: translateX(-50%);
+    background: radial-gradient(circle at 35% 35%, #3d5a80, #05070a 60%); box-shadow: 0 0 0 1.5px #1c1e21; }
+  .compu__pantalla { position: relative; display: grid; grid-template-rows: auto auto 1fr; height: 100%; border-radius: 6px; overflow: hidden; background: #f4f2ee; }
+  .compu__pantalla::after { content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none; background: linear-gradient(125deg, rgb(255 255 255 / 0.13), transparent 30%); }
+  .compu__pestanas { display: flex; align-items: end; gap: 10px; padding: 8px 12px 0; background: #dcd8d0; }
+  .compu__luces { display: flex; gap: 6px; padding-bottom: 9px; }
+  .compu__luces i { width: 10px; height: 10px; border-radius: 50%; background: #ff5f57; }
+  .compu__luces i:nth-child(2) { background: #febc2e; }
+  .compu__luces i:nth-child(3) { background: #28c840; }
+  .compu__pestana { display: flex; align-items: center; gap: 8px; max-width: 220px; padding: 7px 14px; border-radius: 8px 8px 0 0; background: #f4f2ee; color: #1a1a1a;
+    font: 600 0.75rem var(--display); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .compu__pestana b { flex: none; width: 10px; height: 10px; border-radius: 3px; background: var(--c); }
+  .compu__barra { display: flex; align-items: center; gap: 10px; padding: 7px 12px; background: #f4f2ee; border-bottom: 1px solid #e0dcd4; color: #8a867e; font: 600 0.8rem var(--mono); }
+  .compu__url { flex: 1; min-width: 0; display: flex; align-items: center; gap: 8px; padding: 5px 12px; border-radius: 999px; background: #e7e3db; color: #3a3833;
+    font: 400 0.75rem var(--mono); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .compu__url svg { flex: none; }
+  .compu__web { overflow: hidden; }
+  .compu__bisagra { height: 6px; margin-inline: 10%; background: linear-gradient(#0b0c0e, #2b2e33); }
+  .compu__base { position: relative; height: 16px; margin-inline: -7%; border-radius: 2px 2px 22px 22px / 2px 2px 14px 14px;
+    background: linear-gradient(#5d6168, #383b40 45%, #1d1f22); box-shadow: inset 0 1px 0 #7a7e85; }
+  .compu__base::before { content: ""; position: absolute; top: 0; left: 50%; width: 18%; height: 6px; border-radius: 0 0 8px 8px; background: linear-gradient(#2a2c30, #45484e); transform: translateX(-50%); }
+  @media (max-width: 560px) { .compu__tapa { padding: 9px 9px 12px; border-radius: 12px 12px 4px 4px; } .compu__pestanas { display: none; } }
 
-  /* proyectos list */
-  .proj-list { border-top: 1px solid var(--line); }
-  .proj-row { display: grid; grid-template-columns: 2.4em 1fr auto auto; align-items: center; gap: 18px; padding-block: 20px; border-bottom: 1px solid var(--line); cursor: pointer; background: none; border-left: none; border-right: none; border-top: none; width: 100%; text-align: left; font: inherit; color: inherit; text-decoration: none; }
-  .proj-row:hover, .proj-row:focus-visible { background: var(--paper-raised); outline: none; }
-  .proj-idx { font-family: 'IBM Plex Mono', monospace; font-size: 12.5px; color: var(--ink-faint); }
-  .proj-name { font-size: 18px; font-weight: 700; margin: 0 0 3px; }
-  .proj-desc { font-size: 13px; color: var(--ink-soft); margin: 0; max-width: 54ch; }
-  .proj-tag { font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; color: var(--pine); background: var(--pine-bg); padding: 4px 9px; white-space: nowrap; }
-  .proj-arrow { font-size: 12.5px; color: var(--ink-faint); white-space: nowrap; }
-  .proj-row:hover .proj-arrow { color: var(--accent-ink); }
-  .proj-row.ghost { border: 1px dashed var(--line); padding: 18px 20px; margin-block: 22px; }
-  .proj-row.ghost:hover { border-color: var(--accent-ink); }
-  .proj-row.ghost .proj-name { color: var(--ink); }
-  .proj-row.ghost .proj-arrow { color: var(--accent-ink); font-weight: 500; }
-  .proj-tag.ghost-tag { color: var(--accent-ink); background: color-mix(in srgb, var(--accent) 12%, transparent); }
-  @media (max-width: 640px) { .proj-row { grid-template-columns: 2em 1fr; row-gap: 10px; } .proj-tag, .proj-arrow { grid-column: 2; justify-self: start; } }
+  .celu { position: relative; width: 272px; max-width: 100%; aspect-ratio: 9 / 19.5; padding: 11px; border-radius: 50px;
+    background: linear-gradient(150deg, #4a4e55 0%, #1b1d20 22%, #2c2f34 55%, #121315 80%, #3a3d43 100%);
+    box-shadow: inset 0 0 0 1.5px #60646b, inset 0 0 0 4px #0a0b0d, 0 44px 80px -28px rgb(0 0 0 / 0.8), 0 0 0 1px rgb(255 255 255 / 0.05);
+    animation: celu-in 0.5s cubic-bezier(0.2, 0.9, 0.2, 1.1); }
+  @keyframes celu-in { from { opacity: 0; transform: translateY(24px) rotate(-4deg) scale(0.96); } }
+  .celu::before { content: ""; position: absolute; left: -3px; top: 23%; width: 3px; height: 54px; border-radius: 2px 0 0 2px; background: #3d4046; box-shadow: 0 66px 0 #3d4046, 0 -50px 0 -18px #3d4046; }
+  .celu::after { content: ""; position: absolute; right: -3px; top: 30%; width: 3px; height: 84px; border-radius: 0 2px 2px 0; background: #3d4046; }
+  .celu__pantalla { position: relative; height: 100%; border-radius: 40px; overflow: hidden; background: #f4f2ee; }
+  .celu__pantalla::after { content: ""; position: absolute; inset: 0; z-index: 3; pointer-events: none; background: linear-gradient(118deg, rgb(255 255 255 / 0.16), transparent 32%); }
+  .celu__isla { position: absolute; top: 10px; left: 50%; z-index: 4; width: 92px; height: 27px; border-radius: 20px; background: #000; transform: translateX(-50%); }
+  .celu__estado { position: absolute; top: 0; left: 0; right: 0; z-index: 2; display: flex; justify-content: space-between; align-items: center; height: 48px; padding: 0 28px 0 32px;
+    background: linear-gradient(#f4f2ee 72%, transparent); color: #1a1a1a; font: 700 13px var(--display); }
+  .celu__estado span:last-child { display: flex; gap: 5px; align-items: center; }
+  .celu__estado span:last-child i { display: block; width: 22px; height: 11px; border: 1.5px solid #1a1a1a; border-radius: 3px; box-shadow: inset -6px 0 0 #f4f2ee, inset 0 0 0 1.5px #f4f2ee; background: #1a1a1a; }
+  .celu__contenido { padding-top: 46px; }
+  .celu__home { position: absolute; bottom: 8px; left: 50%; z-index: 4; width: 110px; height: 5px; border-radius: 3px; background: #1a1a1a; transform: translateX(-50%); }
 
-  /* skills */
-  .stack-line { padding-block: 8px 44px; font-size: 15px; line-height: 2.1; border-bottom: 1px solid var(--line); }
-  .stack-line span { font-family: 'IBM Plex Mono', monospace; }
-  .stack-line .sep { color: var(--ink-faint); padding: 0 10px; }
+  .manzanas { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 6px; margin-top: 28px; }
+  .manzana { display: grid; place-items: center; aspect-ratio: 1.35; padding: 10px; border: 1px solid var(--avenida); background: var(--bg-2); color: var(--crema-2);
+    font: 500 0.8125rem/1.3 var(--mono); text-align: center; transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease; }
+  .manzana:hover { background: var(--naranja); color: var(--bg); transform: translateY(-3px); }
 
-  /* cta */
-  .cta-block { padding-block: 52px; border-bottom: 1px solid var(--line); }
-  .cta-block h2 { font-size: clamp(26px, 4vw, 38px); margin: 0 0 14px; max-width: 18ch; }
-  .cta-block p { max-width: 46ch; margin: 0 0 26px; }
-  .cta-row { display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
+  .contacto { position: relative; display: grid; justify-items: start; gap: 24px; overflow: hidden; }
+  .contacto::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+    background: linear-gradient(35deg, transparent calc(50% - 1px), rgb(255 106 43 / 0.22) 50%, transparent calc(50% + 1px)),
+      linear-gradient(-35deg, transparent calc(50% - 1px), rgb(255 106 43 / 0.22) 50%, transparent calc(50% + 1px)); }
+  .contacto > * { position: relative; }
+  .contacto .titulo { font-size: clamp(2.6rem, 7.5vw, 6rem); max-width: 13ch; }
+  .contacto p { color: var(--crema-2); max-width: 50ch; font-weight: 500; font-size: 1.0625rem; }
+  .mail { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 10px; font: 500 1rem var(--mono); }
+  .mail button { padding: 6px 12px; border: 1px solid var(--avenida); background: none; color: var(--crema-2); font: 500 0.75rem var(--mono); cursor: pointer; }
+  .mail button:hover { border-color: var(--naranja); color: var(--crema); }
+  .pie { max-width: 1240px; margin: -1px auto 0; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; padding: 18px clamp(20px, 4vw, 48px);
+    border: 1px solid var(--calle); font: 400 0.75rem var(--mono); color: var(--crema-3); }
 
-  footer.site { padding-block: 30px; }
-  .footer-row { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; font-size: 13px; color: var(--ink-faint); }
-  .footer-row a { text-decoration: none; color: var(--ink-faint); }
-  .footer-row a:hover { color: var(--accent-ink); }
-  .footer-links { display: flex; gap: 18px; flex-wrap: wrap; }
+  .reveal-on .aparece:not(.visible) { opacity: 0; transform: translateY(26px); }
+  .aparece { transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); transition-delay: var(--d, 0s); }
+  .fila.aparece { transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) var(--d, 0s), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) var(--d, 0s), background-color 0.25s ease, padding 0.3s cubic-bezier(0.2, 0.8, 0.2, 1); }
 
-  .wa-float { position: fixed; bottom: 22px; right: 22px; width: 54px; height: 54px; border-radius: 50%; background: #22C35E; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 22px rgba(0,0,0,.28); z-index: 45; transition: transform .2s; }
+  @media (max-width: 860px) {
+    .sobre { grid-template-columns: minmax(0, 1fr); }
+    .pilares { grid-template-columns: minmax(0, 1fr); }
+    .pilar + .pilar { padding-left: 0; border-left: 0; border-top: 1px solid var(--calle); margin-top: 24px; }
+    .fila { grid-template-columns: 32px minmax(0, 1fr) 20px; gap: 12px; }
+    .fila__desc, .fila__tipo { display: none; }
+    .manzanas { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .escenario { min-height: 0; }
+  }
+
+  .wa-float { position: fixed; bottom: 22px; right: 22px; width: 54px; height: 54px; border-radius: 50%; background: #22C35E; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 10px 26px rgba(0,0,0,.4); z-index: 45; transition: transform .2s; }
   .wa-float:hover { transform: scale(1.07); }
   .wa-float svg { width: 26px; height: 26px; fill: #fff; }
-
-  /* modal */
-  .veil { position: fixed; inset: 0; background: rgba(10,10,8,.6); display: flex; align-items: center; justify-content: center; padding: 20px; z-index: 60; opacity: 0; pointer-events: none; transition: opacity .2s; }
-  .veil.open { opacity: 1; pointer-events: auto; }
-  .modal { background: var(--paper); border: 1px solid var(--line); width: min(820px, 100%); max-height: 90vh; display: flex; flex-direction: column; transform: translateY(10px); transition: transform .2s; }
-  .veil.open .modal { transform: translateY(0); }
-  .modal-head { display: flex; align-items: center; justify-content: space-between; padding: 13px 16px; border-bottom: 1px solid var(--line); gap: 12px; flex-wrap: wrap; }
-  .modal-title { font-weight: 700; font-size: 14px; }
-  .modal-controls { display: flex; align-items: center; gap: 8px; }
-  .seg { display: flex; border: 1px solid var(--line); }
-  .seg button { font-family: 'IBM Plex Mono', monospace; font-size: 11px; padding: 6px 11px; background: none; border: none; color: var(--ink-soft); cursor: pointer; }
-  .seg button.on { background: var(--ink); color: var(--paper); }
-  .modal-x { width: 26px; height: 26px; border: 1px solid var(--line); background: none; cursor: pointer; color: var(--ink-soft); }
-  .modal-x:hover { color: var(--ink); }
-  .modal-body { flex: 1; overflow: auto; background: var(--paper-raised); display: flex; justify-content: center; padding: 22px; }
-  .device { background: var(--term-bg); width: 100%; max-width: 680px; box-shadow: 0 18px 46px rgba(0,0,0,.25); }
-  .device.mobile { max-width: 300px; }
-  .device-bar { display: flex; align-items: center; gap: 6px; padding: 8px 12px; }
-  .device-bar span { width: 8px; height: 8px; border-radius: 50%; background: #45484F; }
-  .device-url { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: #9DA0A8; background: #0000002e; padding: 4px 10px; margin-left: 6px; flex: 1; text-align: center; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .device-canvas { width: 100%; aspect-ratio: 16/10; border: 0; display: block; background: #fff; }
-  .device.mobile .device-canvas { aspect-ratio: 9/17.5; }
-  .modal-foot { padding: 12px 16px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: center; }
-  .modal-foot p { margin: 0; font-size: 12.5px; max-width: 46ch; }
-
-  .reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s cubic-bezier(.16,.8,.3,1), transform .6s cubic-bezier(.16,.8,.3,1); }
-  .reveal.show { opacity: 1; transform: translateY(0); }
-
-  .stagger { opacity: 0; transform: translateY(18px); transition: opacity .7s cubic-bezier(.16,.8,.3,1), transform .7s cubic-bezier(.16,.8,.3,1); }
-  body.ready .stagger { opacity: 1; transform: translateY(0); }
-  body.ready .s1 { transition-delay: .05s; } body.ready .s2 { transition-delay: .16s; }
-  body.ready .s3 { transition-delay: .27s; } body.ready .s4 { transition-delay: .38s; }
-  body.ready .s6 { transition-delay: .3s; }
-
-  .name em { position: relative; }
-  .cursor { display: inline-block; width: .5ch; background: var(--accent); margin-left: 2px; animation: blink 1s step-end infinite; }
-  @keyframes blink { 50% { opacity: 0; } }
-
-  #boot { position: fixed; inset: 0; background: #15181D; color: #F1F0EA; z-index: 100; display: flex; align-items: center; justify-content: center; transition: opacity .45s ease, visibility .45s; }
-  #boot.hide { opacity: 0; visibility: hidden; pointer-events: none; }
-  .boot-inner { text-align: center; }
-  .boot-logo { font-size: 46px; letter-spacing: -0.01em; color: #F1F0EA; }
-  .boot-logo .cur { display: inline-block; width: .5ch; background: #FF7A45; margin-left: 3px; animation: blink 1s step-end infinite; }
-  .boot-bar { width: 200px; height: 2px; background: #2B2E34; margin: 22px auto 10px; overflow: hidden; border-radius: 2px; }
-  .boot-bar-fill { height: 100%; width: 0%; background: #FF7A45; }
-  .boot-pct { width: 200px; margin: 0 auto; display: flex; justify-content: space-between; font-family: 'IBM Plex Mono', monospace; font-size: 10.5px; letter-spacing: .08em; text-transform: uppercase; color: #6C6F70; }
-  .boot-pct span:last-child { color: #FF7A45; }
-
-  @media (prefers-reduced-motion: reduce) {
-    .reveal, .stagger { opacity: 1 !important; transform: none !important; transition: none !important; }
-    #boot { display: none; }
-    .cursor, .boot-logo .cur { animation: none; }
-  }
 </style>
 </head>
 <body>
 
-<div id="boot" aria-hidden="true">
-  <div class="boot-inner">
-    <div class="boot-logo display">JP<span class="cur">&nbsp;</span></div>
-    <div class="boot-bar"><div class="boot-bar-fill" id="bootFill"></div></div>
-    <div class="boot-pct"><span>cargando</span><span id="bootPct">0%</span></div>
+<header class="nav" id="nav">
+  <div class="nav__estado">
+    <span><i></i>disponible para nuevos proyectos · respondo en el día</span>
+    <span>la plata · <b id="hora">--:--</b></span>
   </div>
+  <div class="nav__barra">
+    <a class="yo" href="#nombre" aria-label="Juan Perdomo, ir al inicio">
+      <span class="yo__foto"><img src="img/juan.jpg" alt="Juan Perdomo" width="46" height="46" /></span>
+      <span class="yo__texto"><strong>Juan Perdomo</strong><small>full stack · Python / Django</small></span>
+      <span class="yo__tarjeta" aria-hidden="true">
+        <span>Diseño, programo y pongo online tiendas, plataformas y landings a medida.</span>
+        <span class="yo__datos"><span>base</span><span>La Plata, Argentina</span><span>stack</span><span>Python · Django · JS</span><span>proyectos</span><span>7 en producción</span><span>estado</span><span>disponible</span></span>
+      </span>
+    </a>
+    <nav class="links" id="links" aria-label="Secciones">
+      <span class="links__fondo" id="links-fondo"></span>
+      <a href="#sobre">sobre mí</a>
+      <a href="#proyectos">proyectos <sup>07</sup></a>
+      <a href="#stack">stack</a>
+      <a href="#contacto">contacto</a>
+      <span class="links__marca" id="links-marca"></span>
+    </nav>
+    <div class="nav__acciones">
+      <a class="icono" href="cv/Juan_Perdomo_CV.pdf" download title="Descargar CV" aria-label="Descargar CV"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M5 21h14" /></svg></a>
+      <a class="icono" href="#contacto" title="Escribime un mail" aria-label="Escribime un mail"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" /><path d="m3 6 9 7 9-7" /></svg></a>
+      <a class="btn btn--lleno" href="https://wa.me/5492213523930?text=Hola%20Juan%2C%20quiero%20hablar%20sobre%20un%20proyecto" target="_blank" rel="noopener">WhatsApp</a>
+      <button class="icono hamburguesa" id="hamburguesa" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="panel"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <span class="nav__progreso" aria-hidden="true"></span>
+</header>
+<div class="panel" id="panel" aria-hidden="true">
+  <nav class="panel__links" aria-label="Secciones del menú">
+    <a href="#sobre">Sobre mí</a><a href="#proyectos">Proyectos <sup>07</sup></a><a href="#stack">Stack</a><a href="#contacto">Contacto</a>
+  </nav>
+  <div class="acciones"><a class="btn btn--lleno" href="https://wa.me/5492213523930?text=Hola%20Juan%2C%20quiero%20hablar%20sobre%20un%20proyecto" target="_blank" rel="noopener">WhatsApp</a><a class="btn" href="cv/Juan_Perdomo_CV.pdf" download>Descargar CV</a></div>
+  <div class="panel__pie"><span>juanperdomo918918@gmail.com</span><span>la plata · 34°55′S 57°57′O</span></div>
 </div>
 
-<div class="statusbar">
-  <div class="wrap">
-    <span><span class="dot-live"></span><span class="mono">disponible para nuevos proyectos</span></span>
-    <span class="mono">la plata, argentina</span>
+<section class="hero" aria-labelledby="nombre">
+  <div class="copy">
+    <p class="hola entra" style="--d: 0s">hola, soy</p>
+    <h1 id="nombre">
+      <span class="palabra"><span style="--d: 0.1s">Juan</span></span>
+      <span class="palabra palabra--naranja"><span style="--d: 0.22s">Perdomo</span></span>
+    </h1>
+    <p class="lema entra" style="--d: 0.45s">Webs de punta a punta, <em>hechas en La Plata.</em></p>
+    <p class="bajada entra" style="--d: 0.55s">Desarrollador full stack. Diseño, programo en Python/Django y pongo online tiendas, plataformas y landings a medida.</p>
+    <div class="acciones entra" style="--d: 0.7s">
+      <a class="btn btn--lleno" href="https://wa.me/5492213523930?text=Hola%20Juan%2C%20quiero%20hablar%20sobre%20un%20proyecto" target="_blank" rel="noopener">Hablemos por WhatsApp</a>
+      <a class="btn" href="#proyectos">Ver proyectos</a>
+      <a class="btn" href="cv/Juan_Perdomo_CV.pdf" download>Descargar CV</a>
+    </div>
+    <p class="stack entra" style="--d: 0.85s"><span>Python / Django</span><span>E-commerce</span><span>Landings</span><span>Deploy &amp; DevOps</span></p>
   </div>
-</div>
 
-<nav class="top">
-  <div class="wrap nav-row">
-    <a href="#top" class="brand"><img src="img/juan.jpg" alt="Juan Perdomo">Juan Perdomo</a>
-    <div class="nav-links" id="navLinks">
-      <a href="#sobre">Sobre mí</a>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#skills">Skills</a>
-      <a href="https://wa.me/5492213523930" target="_blank" rel="noopener" class="cta">contactar →</a>
-    </div>
-    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  <div class="mapa" id="mapa">
+    <div class="luz" aria-hidden="true"></div>
+    <svg viewBox="-170 -170 1060 1060" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Plano de La Plata con las diagonales y tres proyectos marcados">
+      <g id="plano" transform="rotate(-38 360 360)"></g>
+      <g id="pines"></g>
+    </svg>
   </div>
-</nav>
 
-<div class="wrap">
+  <div class="norte" aria-hidden="true">
+    <svg width="14" height="18" viewBox="0 0 14 18"><path d="M7 0 14 18 7 13 0 18z" /></svg>N
+  </div>
+  <p class="coords" aria-hidden="true"><b id="coords">34°55′17″S · 57°57′16″O</b><span id="lugar">plaza Moreno</span></p>
+</section>
 
-  <header class="masthead" id="top">
-    <div class="masthead-grid">
+<section class="bloque" id="sobre">
+  <p class="etiqueta aparece">sobre mí</p>
+  <div class="sobre">
+    <h2 class="titulo aparece">Nada de plantillas. <em>Cada sitio, a medida del negocio.</em></h2>
+    <div class="sobre__texto aparece" style="--d: 0.1s">
+      <p>Me formé en programación con foco en <strong>Python y Django</strong>, y desde entonces construyo proyectos reales para distintos rubros.</p>
+      <p>Trabajo de punta a punta: relevo lo que necesita el proyecto, diseño la base de datos y el backend, armo el frontend y dejo todo funcionando en producción.</p>
+      <p>Me interesan especialmente el <strong>e-commerce</strong> y las plataformas con lógica propia: carritos, pagos, catálogos y paneles de administración. Sin dejar de lado landings pensadas para convertir visitas en clientes.</p>
+    </div>
+  </div>
+  <div class="pilares">
+    <div class="pilar aparece"><span>backend</span><h3>Backend sólido</h3><p>Django, bases de datos, autenticación, pagos e integraciones armadas para durar.</p></div>
+    <div class="pilar aparece" style="--d: 0.1s"><span>diseño</span><h3>Diseño que convierte</h3><p>Interfaces claras y rápidas, pensadas para que el visitante se convierta en cliente.</p></div>
+    <div class="pilar aparece" style="--d: 0.2s"><span>deploy</span><h3>Entrega de punta a punta</h3><p>Desde la idea hasta el sitio online, en producción y funcionando.</p></div>
+  </div>
+</section>
+
+<section class="bloque" id="proyectos">
+  <div class="proy-cab">
+    <div>
+      <p class="etiqueta aparece">proyectos · 07</p>
+      <h2 class="titulo aparece">Hechos de <em>principio a fin.</em></h2>
+    </div>
+    <p class="aparece">Tocá cualquiera para verlo por dentro, en compu y en celu.</p>
+  </div>
+  <div class="lista" id="lista"></div>
+</section>
+
+<section class="bloque" id="stack">
+  <p class="etiqueta aparece">stack</p>
+  <h2 class="titulo aparece">Lo que uso <em>todos los días.</em></h2>
+  <div class="manzanas aparece" style="--d: 0.1s">
+    <span class="manzana">Python</span><span class="manzana">Django</span><span class="manzana">JavaScript</span><span class="manzana">HTML5 / CSS3</span>
+    <span class="manzana">PostgreSQL</span><span class="manzana">SQLite</span><span class="manzana">Git / GitHub</span><span class="manzana">Render / Heroku</span>
+    <span class="manzana">Pagos online</span><span class="manzana">Panel admin</span><span class="manzana">E-commerce</span><span class="manzana">UX / UI</span>
+  </div>
+</section>
+
+<section class="bloque contacto" id="contacto">
+  <p class="etiqueta aparece">contacto</p>
+  <h2 class="titulo aparece">¿Charlamos sobre <em>tu proyecto?</em></h2>
+  <p class="aparece">Contame qué necesitás y te digo cómo lo resolvería: e-commerce, plataforma, landing o algo distinto.</p>
+  <div class="acciones aparece">
+    <a class="btn btn--lleno" href="https://wa.me/5492213523930?text=Hola%20Juan%2C%20quiero%20contarte%20sobre%20mi%20proyecto" target="_blank" rel="noopener">Escribime por WhatsApp</a>
+    <a class="btn" href="cv/Juan_Perdomo_CV.pdf" download>Descargar CV</a>
+  </div>
+  <p class="mail aparece"><span id="mail">juanperdomo918918@gmail.com</span><button type="button" id="copiar">copiar</button></p>
+</section>
+
+<footer class="pie">
+  <span>© <span id="anio"></span> Juan Perdomo · Desarrollador web full stack</span>
+  <span>34°55′S · 57°57′O · La Plata</span>
+</footer>
+
+<div class="flota" id="flota" aria-hidden="true"></div>
+
+<div class="visor" id="visor" hidden role="dialog" aria-modal="true" aria-labelledby="visor-titulo">
+  <div class="visor__caja">
+    <div class="visor__cab">
       <div>
-        <h1 class="name display stagger s1">Hola, soy<br>JUAN <em>PERDOMO<span class="cursor">&nbsp;</span></em></h1>
-        <p class="role-line stagger s2">Desarrollador web full stack especializado en Python/Django. Diseño, desarrollo y pongo online e-commerce, plataformas y landings a medida, de punta a punta.</p>
-        <div class="hero-actions stagger s3">
-          <a href="https://wa.me/5492213523930?text=Hola%20Juan%2C%20quiero%20hablar%20sobre%20un%20proyecto" class="btn btn-solid" target="_blank" rel="noopener">Hablemos por WhatsApp</a>
-          <a href="#proyectos" class="btn btn-ghost">Ver proyectos</a>
-          <a href="cv/Juan_Perdomo_CV.pdf" class="btn btn-ghost" download>Descargar CV</a>
+        <p class="etiqueta" id="visor-tipo" style="margin: 0 0 8px">e-commerce</p>
+        <h3 id="visor-titulo">Proyecto</h3>
+        <p id="visor-desc"></p>
+      </div>
+      <div class="visor__ctrl">
+        <div class="seg" role="group" aria-label="Ver en">
+          <button type="button" data-disp="compu" aria-pressed="true">compu</button>
+          <button type="button" data-disp="celu" aria-pressed="false">celu</button>
         </div>
-        <div class="hero-tags stagger s4">
-          <span>Python / Django</span><span>E-commerce</span><span>Landings</span><span>Deploy &amp; DevOps</span>
-        </div>
-      </div>
-      <div class="term stagger s6">
-        <div class="term-bar"><span></span><span></span><span></span></div>
-        <div class="term-body">
-          <div><span class="k">// perfil.json</span></div>
-          <div><span class="s">"nombre"</span><span class="k">:</span> <span class="v">"Juan Perdomo"</span><span class="k">,</span></div>
-          <div><span class="s">"rol"</span><span class="k">:</span> <span class="v">"Full Stack Developer"</span><span class="k">,</span></div>
-          <div><span class="s">"stack"</span><span class="k">:</span> <span class="v">["Python","Django","JS"]</span><span class="k">,</span></div>
-          <div><span class="s">"foco"</span><span class="k">:</span> <span class="v">"e-commerce & landings"</span><span class="k">,</span></div>
-          <div><span class="s">"ubicación"</span><span class="k">:</span> <span class="v">"Argentina"</span><span class="k">,</span></div>
-          <div><span class="s">"disponibilidad"</span><span class="k">:</span> <span class="v">true</span></div>
-        </div>
+        <button type="button" class="cerrar" id="cerrar" aria-label="Cerrar">✕</button>
       </div>
     </div>
-  </header>
-
-  <section id="sobre">
-    <div class="section-head"><h2>Sobre mí</h2></div>
-    <div class="sobre-grid">
-      <div>
-        <p class="lead">Soy <strong>Juan Perdomo</strong>, desarrollador web full stack. Me formé en programación con foco en Python y Django, y desde entonces vengo construyendo proyectos reales para distintos rubros.</p>
-        <p>Trabajo de punta a punta: relevo lo que necesita el proyecto, diseño la base de datos y el backend, armo el frontend y dejo todo funcionando en producción. Nada de plantillas genéricas: cada sitio se arma a medida del negocio.</p>
-        <p>Me interesa especialmente el e-commerce y las plataformas con lógica propia (carritos, pagos, catálogos, paneles de administración), sin dejar de lado landings y sitios institucionales bien pensados para convertir visitas en clientes.</p>
-        <p>Además de este proyecto (mi propio landing), armé la landing de <a href="https://impulsastudiodigital.com.ar" target="_blank" rel="noopener" class="btn-mono">Impulsa Studio</a>, una agencia de marketing digital, y varios e-commerce y plataformas que podés ver abajo.</p>
-      </div>
-      <div class="spec-list">
-        <div class="spec-row"><span class="k">Backend sólido</span><p>Django, bases de datos, autenticación, pagos e integraciones armadas para durar.</p></div>
-        <div class="spec-row"><span class="k">Diseño que convierte</span><p>Interfaces claras, rápidas y pensadas para que el visitante se convierta en cliente.</p></div>
-        <div class="spec-row"><span class="k">Entrega end-to-end</span><p>Desde la idea hasta el sitio online, en producción y funcionando.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="proyectos">
-    <div class="section-head"><h2>Proyectos — 07</h2><p>Sitios y plataformas que desarrollé, de principio a fin. Tocá cualquiera para verlo por dentro.</p></div>
-    <div class="proj-list" id="projList"></div>
-  </section>
-
-  <section id="skills">
-    <div class="section-head"><h2>Stack</h2><p>Lo que uso todos los días para construir estos proyectos.</p></div>
-    <p class="stack-line mono">
-      Python<span class="sep">·</span>Django<span class="sep">·</span>JavaScript<span class="sep">·</span>HTML5 / CSS3<span class="sep">·</span>PostgreSQL<span class="sep">·</span>SQLite<span class="sep">·</span>Git / GitHub<span class="sep">·</span>Deploy (Render / Heroku)<span class="sep">·</span>Pagos online<span class="sep">·</span>Panel admin<span class="sep">·</span>E-commerce<span class="sep">·</span>UX / UI
-    </p>
-  </section>
-
-  <section class="cta-block">
-    <h2 class="display">¿Charlamos sobre tu proyecto?</h2>
-    <p>Contame qué necesitás y te digo cómo lo resolvería: e-commerce, plataforma, landing o algo distinto.</p>
-    <div class="cta-row">
-      <a href="https://wa.me/5492213523930?text=Hola%20Juan%2C%20quiero%20contarte%20sobre%20mi%20proyecto" class="btn btn-solid" target="_blank" rel="noopener">Escribime ahora</a>
-      <a href="mailto:juanperdomo918918@gmail.com" class="btn-mono">juanperdomo918918@gmail.com</a>
-      <a href="cv/Juan_Perdomo_CV.pdf" class="btn-mono" download>Descargar CV</a>
-    </div>
-  </section>
-
-  <footer class="site">
-    <div class="footer-row">
-      <span>© <span id="year"></span> Juan Perdomo — Desarrollador Web Full Stack</span>
-      <div class="footer-links">
-        <a href="#top">Inicio</a><a href="#sobre">Sobre mí</a><a href="#proyectos">Proyectos</a><a href="#skills">Skills</a>
-        <a href="https://wa.me/5492213523930" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-    </div>
-  </footer>
-
+    <div class="escenario" id="escenario"></div>
+    <div class="visor__pie"><span>capturas reales del sitio en producción</span><a class="btn" id="visor-abrir" href="#" target="_blank" rel="noopener">Abrir sitio ↗</a></div>
+  </div>
 </div>
 
 <a class="wa-float" href="https://wa.me/5492213523930" target="_blank" rel="noopener" aria-label="Escribime por WhatsApp">
   <svg viewBox="0 0 32 32"><path d="M16.001 3C9.376 3 4 8.373 4 15c0 2.494.75 4.812 2.037 6.744L4 29l7.44-1.955A11.93 11.93 0 0 0 16.001 27C22.626 27 28 21.627 28 15S22.626 3 16.001 3zm6.949 17.104c-.29.816-1.44 1.5-2.35 1.694-.626.132-1.443.238-4.194-.9-3.523-1.46-5.79-5.033-5.966-5.267-.169-.234-1.428-1.9-1.428-3.625 0-1.725.9-2.572 1.222-2.924.29-.317.633-.397.844-.397.211 0 .422.002.606.011.194.01.454-.074.71.542.29.694.986 2.394 1.072 2.569.087.175.145.379.029.613-.116.234-.174.379-.343.585-.169.205-.354.457-.506.613-.169.175-.345.365-.148.716.198.35.879 1.451 1.887 2.35 1.297 1.155 2.39 1.512 2.741 1.681.35.169.554.14.759-.084.204-.223.876-1.022 1.11-1.372.234-.35.468-.29.789-.175.32.116 2.033.958 2.383 1.133.35.175.583.263.671.409.087.146.087.847-.203 1.663z"/></svg>
 </a>
 
-<div class="veil" id="veil">
-  <div class="modal">
-    <div class="modal-head">
-      <span class="modal-title" id="mTitle"></span>
-      <div class="modal-controls">
-        <div class="seg"><button id="bD" class="on">desktop</button><button id="bM">mobile</button></div>
-        <button class="modal-x" id="mClose" aria-label="Cerrar">✕</button>
-      </div>
-    </div>
-    <div class="modal-body">
-      <div class="device" id="device">
-        <div class="device-bar"><span></span><span></span><span></span><span class="device-url mono" id="mUrl"></span></div>
-        <iframe class="device-canvas" id="mFrame" src="about:blank" title="Vista previa del sitio" loading="lazy"></iframe>
-      </div>
-    </div>
-    <div class="modal-foot">
-      <p id="mDesc"></p>
-      <a class="btn-mono" id="mOpen" href="#" target="_blank" rel="noopener">abrir sitio ↗</a>
-    </div>
-  </div>
-</div>
-
 <script>
-  var PROJECTS = [
-    { name: "REGALBOXX", tag: "e-commerce", desc: "Cajas de regalo a medida: catálogo, carrito, checkout propio y panel de administración.", url: "https://regalboxx.com.ar" },
-    { name: "FICCTURA + UNIVERSO 404", tag: "e-commerce", desc: "Dos marcas de indumentaria sobre un mismo backend, catálogo y carrito.", url: "https://ficctura.com.ar" },
-    { name: "Las Manolas", tag: "e-commerce", desc: "Ropa para bebés, niños y adolescentes, con venta por WhatsApp y Mercado Pago.", url: "https://lasmanolas.com.ar" },
-    { name: "Portside", tag: "e-commerce", desc: "Tienda bilingüe (ES/EN) con carrito y checkout que se adaptan al idioma.", url: "https://portsidepm.com" },
-    { name: "Neuroeducación", tag: "plataforma", desc: "Cursos online con cuentas de usuario, dashboard de progreso y pagos integrados.", url: "https://marianachua.com.ar" },
-    { name: "Impulsa Studio", tag: "landing", desc: "Landing de agencia de marketing digital, pensada para generar consultas por WhatsApp.", url: "https://impulsastudiodigital.com.ar" },
-    { name: "NOA", tag: "e-commerce", desc: "Indumentaria online: catálogo, carrito, checkout y dashboard de pedidos y pagos.", url: "https://noaonline.com.ar" }
+  // Plano del casco urbano: 36 × 36 manzanas, avenida cada 6, plaza en cada cruce de avenidas,
+  // plaza Moreno en el centro, las dos diagonales grandes y el rombo. Rotado -38° como el real.
+  const ns = "http://www.w3.org/2000/svg";
+  const M = 20, N = 36, C = 360, GIRO = -38;
+  const plano = document.getElementById("plano");
+  const pines = document.getElementById("pines");
+  const el = (tag, attrs, padre) => {
+    const e = document.createElementNS(ns, tag);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    (padre || plano).appendChild(e);
+    return e;
+  };
+
+  for (let i = 0; i <= N; i++) {
+    const clase = i % 6 === 0 ? "calle avenida" : "calle";
+    const d = `${(Math.abs(i - 18) * 0.03).toFixed(2)}s`;
+    el("line", { class: clase, x1: i * M, y1: 0, x2: i * M, y2: N * M, style: `animation-delay:${d}` });
+    el("line", { class: clase, x1: 0, y1: i * M, x2: N * M, y2: i * M, style: `animation-delay:${d}` });
+  }
+  for (const a of [6, 12, 18, 24, 30]) for (const b of [6, 12, 18, 24, 30]) {
+    if (a === 18 && b === 18) continue;
+    el("rect", { class: "plaza", x: a * M - 8, y: b * M - 8, width: 16, height: 16 });
+  }
+
+  [[0, 0], [720, 0], [720, 720], [0, 720]].forEach(([x, y], i) =>
+    el("path", { class: "diag", d: `M${C} ${C}L${x} ${y}`, pathLength: 1, style: `--d:${0.5 + i * 0.12}s` }));
+  [[360, 0, 720, 360], [720, 360, 360, 720], [360, 720, 0, 360], [0, 360, 360, 0]].forEach(([a, b, c, d], i) =>
+    el("path", { class: "diag diag--rombo", d: `M${a} ${b}L${c} ${d}`, pathLength: 1, style: `--d:${1.1 + i * 0.12}s` }));
+
+  el("rect", { class: "moreno", x: C - 22, y: C - 22, width: 44, height: 44 });
+  el("rect", { class: "anillo", x: C - 22, y: C - 22, width: 44, height: 44 });
+
+  // Tres proyectos reales marcados en el mapa, con su ruta desde plaza Moreno
+  const PROYECTOS = [
+    { x: 600, y: 120, nombre: "REGALBOXX", tipo: "e-commerce · Django", href: "#proyectos" },
+    { x: 600, y: 540, nombre: "Neuroeducación", tipo: "plataforma · Django", href: "#proyectos" },
+    { x: 120, y: 600, nombre: "Impulsa Studio", tipo: "landing · Django", href: "#proyectos" },
+  ];
+  const rad = (GIRO * Math.PI) / 180;
+  const girar = (x, y) => [C + (x - C) * Math.cos(rad) - (y - C) * Math.sin(rad), C + (x - C) * Math.sin(rad) + (y - C) * Math.cos(rad)];
+
+  const rutas = PROYECTOS.map((p, i) =>
+    el("path", { class: "ruta", d: `M${C} ${C}H${p.x}V${p.y}`, pathLength: 1, style: `--d:${1.9 + i * 0.25}s` }));
+
+  PROYECTOS.forEach((p, i) => {
+    const [x, y] = girar(p.x, p.y);
+    const a = el("a", { class: "pin", href: p.href, tabindex: 0, style: `--d:${2.6 + i * 0.25}s`, "aria-label": `${p.nombre}, ${p.tipo}` }, pines);
+    const caja = el("rect", { class: "pin__caja", x: x + 16, y: y - 22, height: 44, rx: 0 }, a);
+    const t1 = el("text", { class: "pin__texto", x: x + 28, y: y - 3 }, a);
+    t1.textContent = p.nombre;
+    const t2 = el("text", { class: "pin__tipo", x: x + 28, y: y + 13 }, a);
+    t2.textContent = p.tipo;
+    el("rect", { class: "pin__punto", x: x - 8, y: y - 8, width: 16, height: 16 }, a);
+    const medir = () => caja.setAttribute("width", Math.max(t1.getComputedTextLength(), t2.getComputedTextLength()) + 26);
+    medir();
+    document.fonts?.ready.then(medir);
+    const activar = (on) => { a.classList.toggle("is-activo", on); rutas[i].classList.toggle("is-activa", on); };
+    a.addEventListener("pointerenter", () => activar(true));
+    a.addEventListener("pointerleave", () => activar(false));
+    a.addEventListener("focus", () => activar(true));
+    a.addEventListener("blur", () => activar(false));
+  });
+
+  const [mx, my] = girar(C, C + 34);
+  const rotulo = el("text", { class: "rotulo", x: mx, y: my + 10, "text-anchor": "middle" }, pines);
+  rotulo.textContent = "PLAZA MORENO";
+
+  // Coordenadas y luz que siguen al mouse; el plano se corre apenas (paralaje)
+  const mapa = document.getElementById("mapa");
+  const svg = mapa.querySelector("svg");
+  const coords = document.getElementById("coords");
+  const lugar = document.getElementById("lugar");
+  const gms = (v, pos, neg) => {
+    const a = Math.abs(v), g = Math.floor(a), m = Math.floor((a - g) * 60), s = Math.round(((a - g) * 60 - m) * 60);
+    return `${g}°${String(m).padStart(2, "0")}′${String(s).padStart(2, "0")}″${v < 0 ? neg : pos}`;
+  };
+  const quieto = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  mapa.addEventListener("pointermove", (e) => {
+    const r = mapa.getBoundingClientRect();
+    mapa.style.setProperty("--lx", `${e.clientX - r.left}px`);
+    mapa.style.setProperty("--ly", `${e.clientY - r.top}px`);
+    if (!quieto) {
+      svg.style.setProperty("--px", `${((e.clientX - r.left) / r.width - 0.5) * -12}px`);
+      svg.style.setProperty("--py", `${((e.clientY - r.top) / r.height - 0.5) * -12}px`);
+    }
+    const pt = svg.createSVGPoint();
+    pt.x = e.clientX; pt.y = e.clientY;
+    const p = pt.matrixTransform(svg.getScreenCTM().inverse());
+    const lat = -34.9215 - ((p.y - C) / M) * 0.00108;
+    const lon = -57.9545 + ((p.x - C) / M) * 0.00132;
+    coords.textContent = `${gms(lat, "N", "S")} · ${gms(lon, "E", "O")}`;
+    lugar.textContent = Math.hypot(p.x - C, p.y - C) < 40 ? "plaza Moreno" : "La Plata";
+  });
+  mapa.addEventListener("pointerleave", () => {
+    svg.style.setProperty("--px", "0px");
+    svg.style.setProperty("--py", "0px");
+    coords.textContent = "34°55′17″S · 57°57′16″O";
+    lugar.textContent = "plaza Moreno";
+  });
+
+  // ---------- Proyectos ----------
+  const LISTA = [
+    { slug: "regalboxx", nombre: "Regalboxx", desc: "Cajas de regalo a medida: catálogo, carrito, checkout propio y panel de administración.", tipo: "e-commerce", color: "#e94f64", url: "https://regalboxx.com.ar" },
+    { slug: "ficctura", nombre: "Ficctura + Universo 404", desc: "Dos marcas de indumentaria sobre un mismo backend, catálogo y carrito.", tipo: "e-commerce", color: "#262626", url: "https://ficctura.com.ar" },
+    { slug: "manolas", nombre: "Las Manolas", desc: "Ropa para bebés, niños y adolescentes, con venta por WhatsApp y Mercado Pago.", tipo: "e-commerce", color: "#e48aae", url: "https://lasmanolas.com.ar" },
+    { slug: "portside", nombre: "Portside", desc: "Tienda bilingüe (ES/EN) con carrito y checkout que se adaptan al idioma.", tipo: "e-commerce", color: "#1f4e79", url: "https://portsidepm.com" },
+    { slug: "neuroeducacion", nombre: "Neuroeducación", desc: "Cursos online con cuentas de usuario, dashboard de progreso y pagos integrados.", tipo: "plataforma", color: "#6c5ce7", url: "https://marianachua.com.ar" },
+    { slug: "impulsa", nombre: "Impulsa Studio", desc: "Landing de agencia de marketing digital, pensada para generar consultas por WhatsApp.", tipo: "landing", color: "#00a884", url: "https://impulsastudiodigital.com.ar" },
+    { slug: "noa", nombre: "NOA", desc: "Indumentaria online: catálogo, carrito, checkout y dashboard de pedidos y pagos.", tipo: "e-commerce", color: "#a8834d", url: "https://noaonline.com.ar" },
   ];
 
-  var list = document.getElementById('projList');
-  PROJECTS.forEach(function (p, i) {
-    var row = document.createElement('button');
-    row.className = 'proj-row';
-    row.setAttribute('type', 'button');
-    row.innerHTML = '<span class="proj-idx">' + String(i + 1).padStart(2, '0') + '</span>' +
-      '<span><span class="proj-name">' + p.name + '</span><p class="proj-desc">' + p.desc + '</p></span>' +
-      '<span class="proj-tag">' + p.tag + '</span><span class="proj-arrow">ver caso →</span>';
-    row.addEventListener('click', function () { openModal(p); });
-    list.appendChild(row);
+  const dominio = (url) => url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+  const shot = (p, celu) => `<img src="img/previews/${p.slug}-${celu ? "mobile" : "desktop"}.jpg" alt="Captura de ${p.nombre}" loading="lazy" style="width:100%;display:block">`;
+
+  const lista = document.getElementById("lista");
+  const flota = document.getElementById("flota");
+  LISTA.forEach((p, i) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "fila aparece";
+    b.style.setProperty("--d", `${i * 0.05}s`);
+    b.innerHTML = `<span class="fila__num">${String(i + 1).padStart(2, "0")}</span><span class="fila__nombre">${p.nombre}</span><span class="fila__desc">${p.desc}</span><span class="fila__tipo">${p.tipo}</span><span class="fila__flecha" aria-hidden="true">↗</span>`;
+    b.addEventListener("pointerenter", () => { flota.innerHTML = shot(p, false); flota.classList.add("is-visible"); });
+    b.addEventListener("pointerleave", () => flota.classList.remove("is-visible"));
+    b.addEventListener("click", () => abrir(p));
+    lista.appendChild(b);
   });
-  var ghost = document.createElement('a');
-  ghost.className = 'proj-row ghost';
-  ghost.href = 'https://wa.me/5492213523930?text=Hola%20Juan%2C%20tengo%20un%20proyecto%20en%20mente';
-  ghost.target = '_blank';
-  ghost.rel = 'noopener';
-  ghost.innerHTML = '<span class="proj-idx">08</span><span><span class="proj-name">¿Tenés un proyecto en mente?</span><p class="proj-desc">Sumo proyectos nuevos todo el tiempo: e-commerce, plataformas, landings o lo que necesite tu negocio.</p></span><span class="proj-tag ghost-tag">a medida</span><span class="proj-arrow">contame tu idea →</span>';
-  list.appendChild(ghost);
+  const nueva = document.createElement("a");
+  nueva.className = "fila fila--nueva aparece";
+  nueva.href = "https://wa.me/5492213523930?text=Hola%20Juan%2C%20tengo%20un%20proyecto%20en%20mente";
+  nueva.target = "_blank";
+  nueva.rel = "noopener";
+  nueva.innerHTML = `<span class="fila__num">08</span><span class="fila__nombre">¿El tuyo?</span><span class="fila__desc">E-commerce, plataforma, landing o lo que necesite tu negocio.</span><span class="fila__tipo">a medida</span><span class="fila__flecha" aria-hidden="true">→</span>`;
+  lista.appendChild(nueva);
+  document.addEventListener("pointermove", (e) => { flota.style.left = `${e.clientX}px`; flota.style.top = `${e.clientY}px`; });
 
-  var veil = document.getElementById('veil'), device = document.getElementById('device'), frame = document.getElementById('mFrame');
-  var current = null;
-  function openModal(p) {
-    current = p;
-    document.getElementById('mTitle').textContent = p.name;
-    document.getElementById('mUrl').textContent = p.url.replace('https://', '');
-    document.getElementById('mDesc').textContent = p.desc;
-    document.getElementById('mOpen').href = p.url;
-    setDevice('desktop');
-    veil.classList.add('open');
-    document.body.style.overflow = 'hidden';
+  // ---------- Visor: compu o celu ----------
+  const visor = document.getElementById("visor");
+  const escenario = document.getElementById("escenario");
+  const visorAbrir = document.getElementById("visor-abrir");
+  let actual = null, disp = matchMedia("(max-width: 860px)").matches ? "celu" : "compu", volver = null;
+  const pintar = () => {
+    document.querySelectorAll("[data-disp]").forEach((b) => b.setAttribute("aria-pressed", b.dataset.disp === disp));
+    escenario.innerHTML = disp === "compu"
+      ? `<div class="compu" style="--c:${actual.color}"><div class="compu__tapa"><div class="compu__pantalla">
+          <div class="compu__pestanas"><span class="compu__luces"><i></i><i></i><i></i></span><span class="compu__pestana"><b></b>${actual.nombre}</span></div>
+          <div class="compu__barra"><span>‹ ›</span><span class="compu__url"><svg width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M2 5V3.5a3 3 0 0 1 6 0V5h1v7H1V5zm1.5 0h3V3.5a1.5 1.5 0 0 0-3 0z" fill="currentColor"/></svg>${dominio(actual.url)}</span><span>↻</span></div>
+          <div class="compu__web"><div class="desliza" style="--hasta:-55%">${shot(actual, false)}</div></div>
+        </div></div><div class="compu__bisagra"></div><div class="compu__base"></div></div>`
+      : `<div class="celu"><div class="celu__pantalla"><span class="celu__isla"></span><div class="celu__estado"><span>9:41</span><span><i></i></span></div><div class="celu__contenido desliza" style="--hasta:-60%">${shot(actual, true)}</div><span class="celu__home"></span></div></div>`;
+  };
+  function abrir(p) {
+    actual = p;
+    volver = document.activeElement;
+    document.getElementById("visor-titulo").textContent = p.nombre;
+    document.getElementById("visor-desc").textContent = p.desc;
+    document.getElementById("visor-tipo").textContent = p.tipo;
+    visorAbrir.href = p.url;
+    pintar();
+    visor.hidden = false;
+    flota.classList.remove("is-visible");
+    document.getElementById("cerrar").focus();
   }
-  function closeModal() {
-    veil.classList.remove('open');
-    document.body.style.overflow = '';
-    frame.src = 'about:blank';
-  }
-  document.getElementById('mClose').addEventListener('click', closeModal);
-  veil.addEventListener('click', function (e) { if (e.target === veil) closeModal(); });
-  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
-  function setDevice(mode) {
-    if (!current) return;
-    device.classList.toggle('mobile', mode === 'mobile');
-    document.getElementById('bD').classList.toggle('on', mode === 'desktop');
-    document.getElementById('bM').classList.toggle('on', mode === 'mobile');
-    if (frame.src !== current.url) frame.src = current.url;
-  }
-  document.getElementById('bD').addEventListener('click', function () { setDevice('desktop'); });
-  document.getElementById('bM').addEventListener('click', function () { setDevice('mobile'); });
+  const cerrar = () => { visor.hidden = true; volver?.focus?.(); };
+  document.getElementById("cerrar").addEventListener("click", cerrar);
+  visor.addEventListener("click", (e) => { if (e.target === visor) cerrar(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !visor.hidden) cerrar(); });
+  document.querySelectorAll("[data-disp]").forEach((b) => b.addEventListener("click", () => { disp = b.dataset.disp; pintar(); }));
 
-  var navToggle = document.getElementById('navToggle');
-  var navLinks = document.getElementById('navLinks');
-  navToggle.addEventListener('click', function () {
-    var isOpen = navLinks.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', isOpen);
+  // ---------- Copiar el mail ----------
+  document.getElementById("copiar").addEventListener("click", async (e) => {
+    try { await navigator.clipboard.writeText(document.getElementById("mail").textContent); e.target.textContent = "copiado ✓"; }
+    catch { getSelection().selectAllChildren(document.getElementById("mail")); e.target.textContent = "seleccionado"; }
+    setTimeout(() => (e.target.textContent = "copiar"), 1800);
   });
-  navLinks.querySelectorAll('a').forEach(function (a) {
-    a.addEventListener('click', function () { navLinks.classList.remove('open'); navToggle.setAttribute('aria-expanded', false); });
-  });
 
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  var groups = [document.querySelectorAll('.sobre-grid > *'), document.querySelectorAll('.proj-row'), document.querySelectorAll('.stack-line'), document.querySelectorAll('.cta-block > *')];
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('show'); io.unobserve(e.target); } });
-  }, { threshold: 0.12 });
-  groups.forEach(function (grp) {
-    grp.forEach(function (el, i) {
-      el.classList.add('reveal');
-      el.style.transitionDelay = Math.min(i * 55, 330) + 'ms';
-      io.observe(el);
-    });
-  });
-  document.querySelectorAll('.section-head').forEach(function (el) { el.classList.add('reveal'); io.observe(el); });
-
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var boot = document.getElementById('boot');
-  function wake() { document.body.classList.add('ready'); }
-  if (reduced) {
-    boot.classList.add('hide');
-    wake();
-  } else {
-    var fill = document.getElementById('bootFill');
-    var pct = document.getElementById('bootPct');
-    var start = performance.now();
-    var duration = 850;
-    function tick(now) {
-      var t = Math.min((now - start) / duration, 1);
-      var eased = 1 - Math.pow(1 - t, 3);
-      var p = Math.round(eased * 100);
-      fill.style.width = p + '%';
-      pct.textContent = p + '%';
-      if (t < 1) {
-        requestAnimationFrame(tick);
-      } else {
-        setTimeout(function () { boot.classList.add('hide'); wake(); }, 150);
-      }
-    }
-    requestAnimationFrame(tick);
+  // ---------- Aparecer al hacer scroll ----------
+  if (!quieto && "IntersectionObserver" in window) {
+    document.documentElement.classList.add("reveal-on");
+    const io = new IntersectionObserver((es) => es.forEach((x) => { if (x.isIntersecting) { x.target.classList.add("visible"); io.unobserve(x.target); } }), { rootMargin: "0px 0px -8% 0px" });
+    document.querySelectorAll(".aparece").forEach((n) => io.observe(n));
   }
+
+  // ---------- Navbar ----------
+  const nav = document.getElementById("nav");
+  const hora = document.getElementById("hora");
+  const reloj = () => (hora.textContent = new Intl.DateTimeFormat("es-AR", { hour: "2-digit", minute: "2-digit", timeZone: "America/Argentina/Buenos_Aires" }).format(new Date()));
+  reloj();
+  setInterval(reloj, 20000);
+
+  const alScroll = () => {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    nav.style.setProperty("--avance", max > 0 ? (scrollY / max).toFixed(4) : 0);
+    nav.classList.toggle("is-chica", scrollY > 40);
+  };
+  addEventListener("scroll", alScroll, { passive: true });
+  alScroll();
+
+  const links = document.getElementById("links");
+  const fondo = document.getElementById("links-fondo");
+  const marca = document.getElementById("links-marca");
+  const enlaces = [...links.querySelectorAll("a")];
+  const ubicar = (el, a, opac) => { el.style.left = `${a.offsetLeft}px`; el.style.width = `${a.offsetWidth}px`; el.style.opacity = opac; };
+  enlaces.forEach((a) => a.addEventListener("pointerenter", () => ubicar(fondo, a, 1)));
+  links.addEventListener("pointerleave", () => (fondo.style.opacity = 0));
+  const secciones = enlaces.map((a) => document.querySelector(a.getAttribute("href")));
+  const centro = { rootMargin: "-45% 0px -50% 0px" };
+  const espia = new IntersectionObserver((es) => es.forEach((x) => {
+    if (!x.isIntersecting) return;
+    const a = enlaces[secciones.indexOf(x.target)];
+    enlaces.forEach((o) => o.classList.toggle("is-activo", o === a));
+    ubicar(marca, a, 1);
+  }), centro);
+  secciones.forEach((sec) => sec && espia.observe(sec));
+  new IntersectionObserver(([x]) => {
+    if (!x.isIntersecting) return;
+    marca.style.opacity = 0;
+    enlaces.forEach((o) => o.classList.remove("is-activo"));
+  }, centro).observe(document.querySelector(".hero"));
+
+  // Menú de celu: se abre como un círculo desde el botón
+  const hamburguesa = document.getElementById("hamburguesa");
+  const panel = document.getElementById("panel");
+  const menu = (abrirMenu) => {
+    nav.classList.toggle("is-abierta", abrirMenu);
+    hamburguesa.setAttribute("aria-expanded", abrirMenu);
+    hamburguesa.setAttribute("aria-label", abrirMenu ? "Cerrar menú" : "Abrir menú");
+    panel.setAttribute("aria-hidden", !abrirMenu);
+    document.documentElement.style.overflow = abrirMenu ? "hidden" : "";
+  };
+  hamburguesa.addEventListener("click", () => menu(!nav.classList.contains("is-abierta")));
+  panel.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => menu(false)));
+  addEventListener("keydown", (e) => { if (e.key === "Escape") menu(false); });
+
+  document.getElementById("anio").textContent = new Date().getFullYear();
 </script>
 </body>
 </html>
