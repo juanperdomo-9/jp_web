@@ -281,6 +281,8 @@
     font: 400 0.75rem var(--mono); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
   .compu__url svg { flex: none; }
   .compu__web { overflow: hidden; }
+  .marco { width: 100%; height: 100%; overflow: hidden; position: relative; }
+  .marco iframe { transform-origin: top left; }
   .compu__bisagra { height: 6px; margin-inline: 10%; background: linear-gradient(#0b0c0e, #2b2e33); }
   .compu__base { position: relative; height: 16px; margin-inline: -7%; border-radius: 2px 2px 22px 22px / 2px 2px 14px 14px;
     background: linear-gradient(#5d6168, #383b40 45%, #1d1f22); box-shadow: inset 0 1px 0 #7a7e85; }
@@ -609,7 +611,23 @@
 
   const dominio = (url) => url.replace(/^https?:\/\//, "").replace(/\/$/, "");
   const shot = (p, celu) => `<img src="img/previews/${p.slug}-${celu ? "mobile" : "desktop"}.jpg" alt="Captura de ${p.nombre}" loading="lazy" style="width:100%;display:block">`;
-  const frame = (p) => `<iframe src="${p.url}" title="${p.nombre} — navegá el sitio real" style="width:100%;height:100%;border:0;display:block;background:#fff"></iframe>`;
+  // El iframe se renderiza al tamaño real de un celu/compu (para que el sitio real
+  // dispare su propio breakpoint) y despues se escala con CSS para entrar justo en el marco.
+  const VP = { compu: [1280, 800], celu: [390, 844] };
+  const frame = (p, modo) => {
+    const [vw, vh] = VP[modo];
+    return `<div class="marco" data-modo="${modo}"><iframe src="${p.url}" title="${p.nombre} — navegá el sitio real" style="width:${vw}px;height:${vh}px;border:0;display:block;background:#fff"></iframe></div>`;
+  };
+  const ajustarMarco = () => {
+    const marco = escenario.querySelector(".marco");
+    if (!marco) return;
+    const [vw] = VP[marco.dataset.modo];
+    const s = marco.clientWidth / vw;
+    const f = marco.querySelector("iframe");
+    f.style.transform = `scale(${s})`;
+    marco.style.height = `${Math.round(VP[marco.dataset.modo][1] * s)}px`;
+  };
+  addEventListener("resize", ajustarMarco, { passive: true });
 
   const lista = document.getElementById("lista");
   const flota = document.getElementById("flota");
@@ -644,9 +662,10 @@
       ? `<div class="compu" style="--c:${actual.color}"><div class="compu__tapa"><div class="compu__pantalla">
           <div class="compu__pestanas"><span class="compu__luces"><i></i><i></i><i></i></span><span class="compu__pestana"><b></b>${actual.nombre}</span></div>
           <div class="compu__barra"><span>‹ ›</span><span class="compu__url"><svg width="10" height="12" viewBox="0 0 10 12" aria-hidden="true"><path d="M2 5V3.5a3 3 0 0 1 6 0V5h1v7H1V5zm1.5 0h3V3.5a1.5 1.5 0 0 0-3 0z" fill="currentColor"/></svg>${dominio(actual.url)}</span><span>↻</span></div>
-          <div class="compu__web">${frame(actual)}</div>
+          <div class="compu__web">${frame(actual, "compu")}</div>
         </div></div><div class="compu__bisagra"></div><div class="compu__base"></div></div>`
-      : `<div class="celu"><div class="celu__pantalla"><span class="celu__isla"></span><div class="celu__estado"><span>9:41</span><span><i></i></span></div><div class="celu__contenido">${frame(actual)}</div><span class="celu__home"></span></div></div>`;
+      : `<div class="celu"><div class="celu__pantalla"><span class="celu__isla"></span><div class="celu__estado"><span>9:41</span><span><i></i></span></div><div class="celu__contenido">${frame(actual, "celu")}</div><span class="celu__home"></span></div></div>`;
+    requestAnimationFrame(ajustarMarco);
   };
   function abrir(p) {
     actual = p;
